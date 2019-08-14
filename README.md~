@@ -1,4 +1,4 @@
-# E-conomic Java Bindings 
+# Billy Java Bindings 
 
 _This client is developed by [Previsto - planning for the service industry](https://previsto.com)_
 
@@ -17,7 +17,7 @@ Add this dependency to your project's POM:
 ```xml
 <dependency>
   <groupId>com.previsto</groupId>
-  <artifactId>economic.java</artifactId>
+  <artifactId>billy.java</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 </dependency>
 ```
@@ -30,30 +30,29 @@ Usage in Spring Boot
 
 application.yml
 ```yml
-economic:
-  serviceUrl: https://restapi.e-conomic.com
-  appSecretToken: YOUR_PRIVATE_TOKEN
-  agreementGrantToken: YOUR_AGREEMENT_GRANT_TOKEN
+billy:
+  serviceUrl: http://billy.dk/api
+  apiKey: YOUR_API_KEY
 ```
 
-EconomicExample.java
+BillyExample.java
 
 ```java
-import com.previsto.economic.model.Customer;
+import com.previsto.billy.model.Contact;
 
 @SpringBootApplication
 public class BillyExample {
 
     @AutoWired
-    private EconomicClient client;
+    private BillyClient client;
     
     @PostConstruct
     private void init() {
-      List<Customer> customers = client.getCustomerResource().findAll();
+      List<Contact> contacts = client.getContactResource().findAll();
         
-      System.out.println("Count: " + customers.size());
-      for(Customer customer : customers) {
-        System.out.println("Customer: " + customer);
+      System.out.println("Count: " + contacts.size());
+      for(Contact contact : contacts) {
+        System.out.println("Contact: " + contact);
       }
     }
     
@@ -65,7 +64,7 @@ public class BillyExample {
 ```
 
 
-See [Test.java](https://github.com/Previsto/economic-java/blob/master/src/test/java/com/previsto/economic/Test.java) for more examples.
+See [Test.java](https://github.com/Previsto/billy-java/blob/master/src/test/java/com/previsto/billy/Test.java) for more examples.
 
 Testing
 =======
