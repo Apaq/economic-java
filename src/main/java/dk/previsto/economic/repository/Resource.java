@@ -62,8 +62,8 @@ public abstract class Resource<T extends Persistable<String>> {
 
         UriComponentsBuilder builder = UriComponentsBuilder.fromUri(url);
         if (pageRequest != null) {
-            builder.queryParam("page", pageRequest.getPageNumber() + 1);
-            builder.queryParam("pageSize", pageRequest.getPageSize());
+            builder.queryParam("skippages", pageRequest.getPageNumber());
+            builder.queryParam("pagesize", pageRequest.getPageSize());
         }
         
         for (Map.Entry<String, String> entry : sideloadParams.entrySet()) {
