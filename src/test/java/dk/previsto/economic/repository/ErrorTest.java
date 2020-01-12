@@ -53,7 +53,7 @@ public class ErrorTest {
     public void testBadRequest() {
         System.out.println("get");
         
-        ContactResource resource = new ContactResource(restTemplate, "http://server/Api");
+        CustomerResource resource = new CustomerResource(restTemplate, "http://server/Api");
         
         mockServer.expect(method(HttpMethod.GET)).andRespond(generateBadRequestResponse());
         
@@ -71,7 +71,7 @@ public class ErrorTest {
     public void testServerError() {
         System.out.println("get");
         
-        ContactResource resource = new ContactResource(restTemplate, "http://server/Api");
+        CustomerResource resource = new CustomerResource(restTemplate, "http://server/Api");
         
         mockServer.expect(method(HttpMethod.GET)).andRespond(generateServerErrorResponse());
         
@@ -89,7 +89,7 @@ public class ErrorTest {
     public void testAuthenticationError() {
         System.out.println("get");
         
-        ContactResource resource = new ContactResource(restTemplate, "http://server/Api");
+        CustomerResource resource = new CustomerResource(restTemplate, "http://server/Api");
         
         mockServer.expect(method(HttpMethod.GET)).andRespond(generateUnauthorizedResponse());
         
@@ -107,7 +107,7 @@ public class ErrorTest {
     public void testResourceNotFoundError() {
         System.out.println("get");
         
-        ContactResource resource = new ContactResource(restTemplate, "http://server/Api");
+        CustomerResource resource = new CustomerResource(restTemplate, "http://server/Api");
         
         mockServer.expect(method(HttpMethod.GET)).andRespond(generateNotFoundResponse());
         

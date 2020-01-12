@@ -4,9 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dk.previsto.economic.model.enums.AccountType;
 import dk.previsto.economic.model.enums.RecordType;
+import org.springframework.data.domain.Persistable;
 
-public class Account {
-     private int accountNumber;//	integer				The account’s number.
+public class Account implements Persistable<Integer> {
+     private Integer accountNumber;//	integer				The account’s number.
      private AccountType accountType; //	Enum			profitAndLoss, status, totalFrom, heading, headingStart, sumInterval, sumAlpha	The type of account in the chart of accounts.
      private String accountingYears; //	string	uri			A link to a list of accounting years for which the account is usable.
      //private List<int> accountsSummed; //	array				An array of the account intervals used for calculating the total for this account.
@@ -33,6 +34,16 @@ public class Account {
      //* vatAccount.self	string	uri			The unique self link of the VAT code.
      //* vatAccount.vatCode	string		5		The VAT code of the VAT account for this account.
 
+
+    @Override
+    public Integer getId() {
+        return accountNumber;
+    }
+
+    @Override
+    public boolean isNew() {
+        return accountNumber == null;
+    }
 
     public int getAccountNumber() {
         return accountNumber;

@@ -1,14 +1,15 @@
 package dk.previsto.economic.model;
 
+import dk.previsto.economic.model.references.*;
+import org.springframework.data.domain.Persistable;
+
 import java.time.Instant;
 
-public class Customer {
+public class Customer implements Persistable<Integer> {
 
     private String address;//	string			510				Address for the customer including street and number.
-    //attention	object							The customer’s person of attention.
-    //attention.customerContactNumber	integer							The unique identifier of the customer employee.
-    //attention.self	string	uri						A unique link reference to the customer employee item.
-    //balance	number		True					The outstanding amount for this customer.
+    private CustomerContactReference atttention;
+    private double balance;
     private boolean barred; //	boolean							Boolean indication of whether the customer is barred from invoicing.
     private String city;//	string			50				The customer’s city.
     private String contacts;//	string	uri						A unique link reference to the customer contacts items.
@@ -16,16 +17,10 @@ public class Customer {
     private String country;//	string			50				The customer’s country.
     private double creditLimit;//	number							A maximum credit for this customer. Once the maximum is reached or passed in connection with an order/quotation/invoice for this customer you see a warning in e-conomic.
     private String currency;//	string			3	3			Default payment currency.
-    //customerContact	object							Reference to main contact employee at customer.
-    //customerContact.customerContactNumber	integer							The unique identifier of the customer contact.
-    //customerContact.self	string	uri						A unique link reference to the customer contact item.
-    //customerGroup	object							Reference to the customer group this customer is attached to.
-    //customerGroup.customerGroupNumber	integer							The unique identifier of the customer group.
-    //customerGroup.self	string	uri						A unique link reference to the customer group item.
-    private int customerNumber; //	integer					999999999	1	The customer number is a positive unique numerical identifier with a maximum of 9 digits.
-    //defaultDeliveryLocation	object							Customers default delivery location.
-    //defaultDeliveryLocation.deliveryLocationNumber	integer							The unique identifier of the delivery location.
-    //defaultDeliveryLocation.self	string	uri						A unique link reference to the delivery location.
+    private CustomerContactReference customerContact;
+    private CustomerGroupReference customerGroup;
+    private Integer customerNumber; //	integer					999999999	1	The customer number is a positive unique numerical identifier with a maximum of 9 digits.
+    private DeliveryLocationReference defaultDeliveryLocation;
     private String deliveryLocations;//	string	uri						A unique link reference to the customer delivery locations items.
     private String ean; //	string			13				European Article Number. EAN is used for invoicing the Danish public sector.
     private String email; //	string			255				Customer e-mail address where e-conomic invoices should be emailed. Note: you can specify multiple email addresses in this field, separated by a space. If you need to send a copy of the invoice or write to other e-mail addresses, you can also create one or more customer contacts.
@@ -34,20 +29,13 @@ public class Customer {
     //invoices.drafts	string	uri						The unique reference to the draft invoices for this customer.
     //invoices.self	string	uri						A unique link reference to the invoices resource for this customer.
     private Instant lastUpdated;//	string	full-date						The date this customer was last updated. The date is formatted according to ISO-8601.
-    //layout	object							Layout to be applied for invoices and other documents for this customer.
-    //layout.layoutNumber	integer							The unique identifier of the layout.
-    //layout.self	string	uri						A unique link reference to the layout item.
+    private LayoutReference layout;
     private String mobilePhone;//	string			50				The customer’s mobile phone number.
     private String name; //	string			255	1			The customer name.
     private String pNumber; //	string			10	10			Extension of corporate identification number (CVR). Identifying separate production unit (p-nummer).
-    //paymentTerms	object							The default payment terms for the customer.
-    //paymentTerms.paymentTermsNumber	integer							The unique identifier of the payment terms.
-    //paymentTerms.self	string	uri						A unique link reference to the payment terms item.
+    private PaymentTermsReference paymentTerms;
     private String publicEntryNumber; //	string			50				The public entry number is used for electronic invoicing, to define the account invoices will be registered on at the customer.
-    //salesPerson	object							Reference to the employee responsible for contact with this customer.
-    //salesPerson.employeeNumber	integer							The unique identifier of the employee.
-    //salesPerson.self	string	uri						A unique link reference to the employee resource.
-    //self	string	uri						The unique self reference of the customer resource.
+    private EmployeeReference salesPerson;
     private String telephoneAndFaxNumber; //	string			255				The customer’s telephone and/or fax number.
     //templates	object
     //templates.invoice	string	uri						The unique reference to the invoice template.
@@ -58,11 +46,19 @@ public class Customer {
     //totals.drafts	string	uri						The unique reference to the draft invoice totals for this customer.
     //totals.self	string	uri						A unique link reference to the totals resource for this customer.
     private String vatNumber;//	string			50				The customer’s value added tax identification number. This field is only available to agreements in Sweden, UK, Germany, Poland and Finland. Not to be mistaken for the danish CVR number, which is defined on the corporateIdentificationNumber property.
-    //vatZone	object							Indicates in which VAT-zone the customer is located (e.g.: domestically, in Europe or elsewhere abroad).
-    //vatZone.self	string	uri						A unique link reference to the VAT-zone item.
-    //vatZone.vatZoneNumber	integer							The unique identifier of the VAT-zone.
+    private VatZoneReference vatZone;
     private String website; //	string			255				Customer website, if applicable.
     private String zip; //	string			30				The customer’s postcode.
+
+    @Override
+    public Integer getId() {
+        return customerNumber;
+    }
+
+    @Override
+    public boolean isNew() {
+        return customerNumber == null;
+    }
 
     public String getAddress() {
         return address;
@@ -70,6 +66,22 @@ public class Customer {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public CustomerContactReference getAtttention() {
+        return atttention;
+    }
+
+    public void setAtttention(CustomerContactReference atttention) {
+        this.atttention = atttention;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public boolean isBarred() {
@@ -128,12 +140,36 @@ public class Customer {
         this.currency = currency;
     }
 
+    public CustomerContactReference getCustomerContact() {
+        return customerContact;
+    }
+
+    public void setCustomerContact(CustomerContactReference customerContact) {
+        this.customerContact = customerContact;
+    }
+
+    public CustomerGroupReference getCustomerGroup() {
+        return customerGroup;
+    }
+
+    public void setCustomerGroup(CustomerGroupReference customerGroup) {
+        this.customerGroup = customerGroup;
+    }
+
     public int getCustomerNumber() {
         return customerNumber;
     }
 
     public void setCustomerNumber(int customerNumber) {
         this.customerNumber = customerNumber;
+    }
+
+    public DeliveryLocationReference getDefaultDeliveryLocation() {
+        return defaultDeliveryLocation;
+    }
+
+    public void setDefaultDeliveryLocation(DeliveryLocationReference defaultDeliveryLocation) {
+        this.defaultDeliveryLocation = defaultDeliveryLocation;
     }
 
     public String getDeliveryLocations() {
@@ -168,6 +204,14 @@ public class Customer {
         this.lastUpdated = lastUpdated;
     }
 
+    public LayoutReference getLayout() {
+        return layout;
+    }
+
+    public void setLayout(LayoutReference layout) {
+        this.layout = layout;
+    }
+
     public String getMobilePhone() {
         return mobilePhone;
     }
@@ -192,12 +236,28 @@ public class Customer {
         this.pNumber = pNumber;
     }
 
+    public PaymentTermsReference getPaymentTerms() {
+        return paymentTerms;
+    }
+
+    public void setPaymentTerms(PaymentTermsReference paymentTerms) {
+        this.paymentTerms = paymentTerms;
+    }
+
     public String getPublicEntryNumber() {
         return publicEntryNumber;
     }
 
     public void setPublicEntryNumber(String publicEntryNumber) {
         this.publicEntryNumber = publicEntryNumber;
+    }
+
+    public EmployeeReference getSalesPerson() {
+        return salesPerson;
+    }
+
+    public void setSalesPerson(EmployeeReference salesPerson) {
+        this.salesPerson = salesPerson;
     }
 
     public String getTelephoneAndFaxNumber() {
@@ -214,6 +274,14 @@ public class Customer {
 
     public void setVatNumber(String vatNumber) {
         this.vatNumber = vatNumber;
+    }
+
+    public VatZoneReference getVatZone() {
+        return vatZone;
+    }
+
+    public void setVatZone(VatZoneReference vatZone) {
+        this.vatZone = vatZone;
     }
 
     public String getWebsite() {

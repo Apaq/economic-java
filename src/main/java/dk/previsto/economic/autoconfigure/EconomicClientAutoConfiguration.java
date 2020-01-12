@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ConditionalOnMissingBean(EconomicClient.class)
-@ConditionalOnProperty("economic.appSecretToken")
+@ConditionalOnProperty(value = {"economic.appSecretToken", "economic.agreementGrantToken"})
 @EnableConfigurationProperties(EconomicProperties.class)
 public class EconomicClientAutoConfiguration {
 
@@ -29,6 +29,6 @@ public class EconomicClientAutoConfiguration {
     public EconomicClient economicClient() {
         String displayKey = properties.getAppSecretToken() != null ? "Not NULL" : "NULL";
         LOG.info("Initializing EconomicClient. [apiKey={}]", displayKey);
-        return clientFactory.create(properties.getAppSecretToken());
+        return clientFactory.create(properties.getAppSecretToken(), properties.getAgreementGrantToken());
     }
 }

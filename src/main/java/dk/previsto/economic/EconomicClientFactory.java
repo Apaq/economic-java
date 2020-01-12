@@ -13,6 +13,6 @@ public class EconomicClientFactory {
     }
     
     public EconomicClient create(String appSecretToken, String agreementGrantToken) {
-        return new EconomicClient(appSecretToken, serviceUrl);
+        return new EconomicClient(appSecretToken, agreementGrantToken, serviceUrl);
     }
 }

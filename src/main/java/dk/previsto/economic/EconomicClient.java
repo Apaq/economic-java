@@ -8,7 +8,7 @@ import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Arrays;
-import java.util.Collections;
+
 import org.apache.http.Header;
 import org.apache.http.client.HttpClient;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
@@ -95,12 +95,12 @@ public class EconomicClient {
         return new OrganizationResource(restTemplate, serviceUrl);
     }
     
-    public ContactResource getContactResource() {
-        return new ContactResource(restTemplate, serviceUrl);
+    public CustomerResource getContactResource() {
+        return new CustomerResource(restTemplate, serviceUrl);
     }
     
-    public InvoiceResource getInvoiceResource() {
-        return new InvoiceResource(restTemplate, serviceUrl);
+    public DraftInvoiceResource getInvoiceResource() {
+        return new DraftInvoiceResource(restTemplate, serviceUrl);
     }
     
     public ProductResource getProductResource() {

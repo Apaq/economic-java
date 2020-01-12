@@ -1,18 +1,26 @@
 package dk.previsto.economic.mapping;
 
 public class Paging {
-    int page;
+    int maxPageSizeAllowed;
+    int skipPages;
     int pageSize;
-    int pageCount;
-    int total;
-    double time;
+    int results;
+    int resultsWithoutFilter;
 
-    public int getPage() {
-        return page;
+    public int getMaxPageSizeAllowed() {
+        return maxPageSizeAllowed;
     }
 
-    public void setPage(int page) {
-        this.page = page;
+    public void setMaxPageSizeAllowed(int maxPageSizeAllowed) {
+        this.maxPageSizeAllowed = maxPageSizeAllowed;
+    }
+
+    public int getSkipPages() {
+        return skipPages;
+    }
+
+    public void setSkipPages(int skipPages) {
+        this.skipPages = skipPages;
     }
 
     public int getPageSize() {
@@ -23,21 +31,19 @@ public class Paging {
         this.pageSize = pageSize;
     }
 
-    public int getPageCount() {
-        return pageCount;
+    public int getResults() {
+        return results;
     }
 
-    public void setPageCount(int pageCount) {
-        this.pageCount = pageCount;
+    public void setResults(int results) {
+        this.results = results;
     }
 
-    public int getTotal() {
-        return total;
+    public int getResultsWithoutFilter() {
+        return resultsWithoutFilter;
     }
 
-    public void setTotal(int total) {
-        this.total = total;
+    public void setResultsWithoutFilter(int resultsWithoutFilter) {
+        this.resultsWithoutFilter = resultsWithoutFilter;
     }
-    
-    
 }
