@@ -40,7 +40,7 @@ public class ProductResourceTest extends ResourceTestBase<Product> {
 
     @Override
     protected String generateSingularId() {
-        return "ksSgZEGPQmGohQ9eWxVOoQ";
+        return "2";
     }
 
     @Override
@@ -51,8 +51,8 @@ public class ProductResourceTest extends ResourceTestBase<Product> {
 
     @Override
     protected void doCheckEntity(Product entity) {
-        if ("ksSgZEGPQmGohQ9eWxVOoQ".equals(entity.getId())) {
-            assertEquals("WC_PREVISTO", entity.getProductNumber());
+        if ("2".equals(entity.getId())) {
+            assertEquals("Updated product", entity.getName());
             return;
         }
 

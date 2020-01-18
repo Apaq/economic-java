@@ -57,20 +57,20 @@ public class DraftInvoiceResourceTest extends ResourceTestBase<DraftInvoice> {
 
     @Override
     protected void doCheckEntity(DraftInvoice entity) {
-        if ("UdsHDvAESV2eCZHSCYOfzA".equals(entity.getId())) {
-            assertEquals(LocalDate.parse("2016-12-23T08:18:20"), entity.getDate());
+        if ("35183".equals(entity.getId())) {
+            assertEquals(LocalDate.parse("2019-02-11"), entity.getDate());
             //assertEquals(InvoiceState.Approved, entity.getState());
             return;
         }
 
-        if ("cSHBqWWITexZvQy29lqpYg".equals(entity.getId())) {
-            assertEquals(LocalDateTime.parse("2016-12-23T08:16:46"), entity.getDate());
+        if ("35199".equals(entity.getId())) {
+            assertEquals(LocalDate.parse("2019-02-12"), entity.getDate());
             //assertEquals(InvoiceState.Draft, entity.getState());
             return;
         }
 
-        if ("o9bpexuzTb25IfEgW7E1Wg".equals(entity.getId())) {
-            assertEquals(LocalDateTime.parse("2016-12-23T08:13:48"), entity.getDate());
+        if ("35200".equals(entity.getId())) {
+            assertEquals(LocalDate.parse("2019-02-12"), entity.getDate());
             //assertEquals(InvoiceState.Approved, entity.getState());
             return;
         }
