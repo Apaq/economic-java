@@ -19,7 +19,7 @@ public class RestTemplateHelper {
                 ObjectMapper om = ((MappingJackson2HttpMessageConverter)converter).getObjectMapper();
                 om.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
                 om.enable(SerializationFeature.INDENT_OUTPUT);
-                om.setPropertyNamingStrategy(PropertyNamingStrategy.UPPER_CAMEL_CASE);
+                //om.setPropertyNamingStrategy(PropertyNamingStrategy.UPPER_CAMEL_CASE);
                 om.registerModule(new JavaTimeModule());
             }
         }

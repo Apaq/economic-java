@@ -38,7 +38,7 @@ public class DraftInvoiceResourceTest extends ResourceTestBase<DraftInvoice> {
 
     @Override
     protected String generateExpectedGetQueryParams() {
-        return "";
+        return "?skipPages=0&pageSize=1000";
     }
 
     @Override

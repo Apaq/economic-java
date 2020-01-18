@@ -1,5 +1,6 @@
 package dk.previsto.economic.repository;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,12 +38,12 @@ public class CustomerResourceTest extends ResourceTestBase<Customer> {
 
     @Override
     protected String generateExpectedGetQueryParams() {
-        return "";
+        return "?skipPages=0&pageSize=1000";
     }
 
     @Override
     protected String generateSingularId() {
-        return "DDAc0RmLQyelyZrv55JJKg";
+        return "1";
     }
     
     @Override
@@ -59,13 +60,13 @@ public class CustomerResourceTest extends ResourceTestBase<Customer> {
     protected void doCheckEntity(Customer entity) {
         if ("1".equals(entity.getId())) {
             assertEquals(false, entity.isBarred());
-            assertEquals(LocalDateTime.parse("2016-12-23T08:06:07"), entity.getLastUpdated());
+            assertEquals(Instant.parse("2020-01-17T10:00:51Z"), entity.getLastUpdated());
             return;
         }
 
         if ("2".equals(entity.getId())) {
-            assertEquals(false, entity.isBarred());
-            assertEquals(LocalDateTime.parse("2016-12-23T08:06:40"), entity.getLastUpdated());
+            assertEquals(true, entity.isBarred());
+            assertEquals(Instant.parse("2019-08-21T09:18:27Z"), entity.getLastUpdated());
             return;
         }
 
