@@ -1,0 +1,61 @@
+{
+  "draftInvoiceNumber": 35183,
+  "soap": {
+    "currentInvoiceHandle": {
+      "id": 47
+    }
+  },
+  "templates": {
+    "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/35183/templates/booking-instructions",
+    "self": "https://restapi.e-conomic.com/invoices/drafts/35183/templates"
+  },
+  "date": "2019-02-11",
+  "currency": "DKK",
+  "exchangeRate": 100.000000,
+  "netAmount": 0.000000,
+  "netAmountInBaseCurrency": 0.00,
+  "grossAmount": 0.000000,
+  "grossAmountInBaseCurrency": 0.00,
+  "marginInBaseCurrency": 0.0000,
+  "marginPercentage": 0.0,
+  "vatAmount": 0.000000,
+  "roundingAmount": 0.00,
+  "costPriceInBaseCurrency": 0.0000,
+  "dueDate": "2019-02-19",
+  "paymentTerms": {
+    "paymentTermsNumber": 1,
+    "daysOfCredit": 8,
+    "name": "Netto 8 dage",
+    "paymentTermsType": "net",
+    "self": "https://restapi.e-conomic.com/payment-terms/1"
+  },
+  "customer": {
+    "customerNumber": 1,
+    "self": "https://restapi.e-conomic.com/customers/1"
+  },
+  "recipient": {
+    "name": "Lix Technologies",
+    "address": "Klamsagervej 23",
+    "zip": "8230",
+    "city": "Åbyhøj",
+    "country": "Denmark",
+    "vatZone": {
+      "name": "Abroad",
+      "vatZoneNumber": 3,
+      "enabledForCustomer": true,
+      "enabledForSupplier": true,
+      "self": "https://restapi.e-conomic.com/vat-zones/3"
+    }
+  },
+  "references": {
+    "other": "f90d1f23-2be0-4a3f-a964-b301427c40ca"
+  },
+  "layout": {
+    "layoutNumber": 19,
+    "self": "https://restapi.e-conomic.com/layouts/19"
+  },
+  "pdf": {
+    "download": "https://restapi.e-conomic.com/invoices/drafts/35183/pdf"
+  },
+  "self": "https://restapi.e-conomic.com/invoices/drafts/35183"
+}

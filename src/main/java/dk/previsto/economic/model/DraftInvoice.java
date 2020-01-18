@@ -8,7 +8,7 @@ import org.springframework.data.domain.Persistable;
 
 import java.time.LocalDate;
 
-public class DraftInvoice implements Persistable<Integer> {
+public class DraftInvoice extends Entity {
     private double costPriceInBaseCurrency;
     private String currency;
     private CustomerReference customer;
@@ -35,13 +35,13 @@ public class DraftInvoice implements Persistable<Integer> {
     private double vatAmount;
 
     @Override
-    public Integer getId() {
-        return draftInvoiceNumber;
+    public String getId() {
+        return draftInvoiceNumber == null ? null : Integer.toString(draftInvoiceNumber);
     }
 
     @Override
-    public boolean isNew() {
-        return draftInvoiceNumber == null;
+    public void setId(String id) {
+        this.draftInvoiceNumber = Integer.parseInt(id);
     }
 
     public double getCostPriceInBaseCurrency() {

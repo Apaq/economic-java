@@ -6,6 +6,7 @@ import dk.previsto.economic.exception.UnknownException;
 import dk.previsto.economic.mapping.CollectionResponse;
 
 import java.lang.reflect.Array;
+import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -13,6 +14,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+
+import dk.previsto.economic.model.Entity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.ParameterizedTypeReference;
@@ -25,7 +28,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-public abstract class Resource<T extends Persistable<Integer>> {
+public abstract class Resource<T extends Entity> {
 
     private static final Logger LOG = LoggerFactory.getLogger(Resource.class);
     protected final RestTemplate restTemplate;
@@ -75,7 +78,7 @@ public abstract class Resource<T extends Persistable<Integer>> {
         return new PageImpl<>(Arrays.asList(result), pageRequest, count);
     }
 
-    public T get(Integer id) {
+    public T get(String id) {
         URI uri = buildUri(id);
         try {
             T entity = (T) restTemplate.getForObject(uri, clazz);
@@ -86,9 +89,9 @@ public abstract class Resource<T extends Persistable<Integer>> {
     }
 
     public void delete(T entity) {
-        Persistable<Integer> e = null;
+        Persistable<String> e = null;
         if(entity instanceof Persistable) {
-            e = (Persistable<Integer>) entity;
+            e = (Persistable<String>) entity;
         }
         if (e == null || e.getId() == null) {
             throw new RequestException("Entity cannot be deleted, because it has no id.");
@@ -96,7 +99,7 @@ public abstract class Resource<T extends Persistable<Integer>> {
         delete(e.getId());
     }
 
-    public void delete(Integer id) {
+    public void delete(String id) {
         restTemplate.delete(buildUri(id));
     }
 
@@ -105,7 +108,7 @@ public abstract class Resource<T extends Persistable<Integer>> {
             throw new RequestException("Entity cannot be persisted.");
         }
 
-        Persistable<Integer> e = (Persistable<Integer>) entity;
+        Persistable<String> e = (Persistable<String>) entity;
         URI uri = buildUri(e.getId());
         T persistedEntity;
 
@@ -124,11 +127,11 @@ public abstract class Resource<T extends Persistable<Integer>> {
         return this.buildUri(null);
     }
 
-    protected URI buildUri(Integer id) {
+    protected URI buildUri(String id) {
         return buildUri(id, null);
     }
 
-    protected URI buildUri(Integer id, String suffix) {
+    protected URI buildUri(String id, String suffix) {
         try {
             String url = serviceUrl + "/" + resourceName;
             if(id != null) {

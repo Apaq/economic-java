@@ -6,7 +6,7 @@ import org.springframework.data.domain.Persistable;
 import java.time.LocalDate;
 import java.util.List;
 
-public class BookedInvoice implements Persistable<Integer> {
+public class BookedInvoice extends Entity {
     private Integer bookedInvoiceNumber;
     private String currency;
     private CustomerReference customer;
@@ -34,13 +34,13 @@ public class BookedInvoice implements Persistable<Integer> {
     private double vatAmount;
 
     @Override
-    public Integer getId() {
-        return bookedInvoiceNumber;
+    public String getId() {
+        return Integer.toString(bookedInvoiceNumber);
     }
 
     @Override
-    public boolean isNew() {
-        return bookedInvoiceNumber == null;
+    public void setId(String id) {
+        this.bookedInvoiceNumber = Integer.parseInt(id);
     }
 
     public Integer getBookedInvoiceNumber() {

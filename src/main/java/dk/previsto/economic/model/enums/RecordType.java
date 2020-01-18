@@ -1,5 +1,5 @@
 package dk.previsto.economic.model.enums;
 
 public enum RecordType {
-    debet, credit
+    debit, credit
 }

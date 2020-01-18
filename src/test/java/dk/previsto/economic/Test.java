@@ -8,11 +8,11 @@ public class Test {
 
     public static void main(String[] args) {
         
-        EconomicClient client = new EconomicClient("66d361eea7c89d4f9c4d56ef66b7e9bce20784e7", "https://api.billysbilling.com/v2", true   );
+        EconomicClient client = new EconomicClient("dd1xzmMlyT0fqvMSA33z0wBY61ZaPgAZbqUud9FmqTo1", "", "https://restapi.e-conomic.com", true   );
         
-        Organization org = client.getOrganizationResource().getCurrent();
+        //Organization org = client.getOrganizationResource().getCurrent();
         
-        Page<Contact> contacts = client.getContactResource().findAll(new PageRequest(0, 2));
+        Page<Customer> customers = client.getCustomerResource().findAll(new PageRequest(0, 2));
         /*Contact contact = new Contact(ContactType.Company, "Apaq", "DK");
         contact.setSupplier(true);
         contact = client.getContactResource().save(contact);

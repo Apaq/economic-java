@@ -1,5 +1,6 @@
 package dk.previsto.economic;
 
+import dk.previsto.economic.net.RestTemplateHelper;
 import dk.previsto.economic.repository.*;
 
 import java.security.KeyManagementException;
@@ -50,7 +51,9 @@ public class EconomicClient {
         //Apply default timeouts
         this.requestFactory.setConnectTimeout(10000);
         this.requestFactory.setReadTimeout(10000);
-        
+
+        RestTemplateHelper.configureForEconomicJargon(restTemplate);
+
         // Apply security
         Header appSecretTokenHeader = new BasicHeader(APP_SECRET_TOKEN_HEADER, appSecretToken);
         Header agreementGrantTokenHeader = new BasicHeader(AGREEEMENT_GRANT_TOKEN_HEADER, agreementGrantToken);
@@ -91,11 +94,7 @@ public class EconomicClient {
         return serviceUrl;
     }
 
-    public OrganizationResource getOrganizationResource() {
-        return new OrganizationResource(restTemplate, serviceUrl);
-    }
-    
-    public CustomerResource getContactResource() {
+    public CustomerResource getCustomerResource() {
         return new CustomerResource(restTemplate, serviceUrl);
     }
     
@@ -111,7 +110,4 @@ public class EconomicClient {
         return new AccountResource(restTemplate, serviceUrl);
     }
 
-    public BankPaymentResource getBankPaymentResource() {
-        return new BankPaymentResource(restTemplate, serviceUrl);
-    }
 }

@@ -1,21 +1,18 @@
 package dk.previsto.economic.exception;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class RequestException extends EconomicException {
 
     private Map<String, Object> validationErrors = null;
     
     @JsonCreator
-    public RequestException(@JsonProperty(value = "errorCode") String errorCode, 
-            @JsonProperty(value = "errorMessage") String errorMessage, 
-            @JsonProperty("helpUrl") String helpUrl, 
-            @JsonProperty("meta") ExceptionMeta meta,
-            @JsonProperty("validationErrors") Map<String, Object> validationErrors) {
-        super(ExceptionHelper.resolveMessage(errorMessage, validationErrors), errorCode, meta);
-        this.validationErrors = validationErrors;
+    public RequestException(@JsonProperty(value = "httpStatusCode") String httpStatusCode, @JsonProperty(value = "message") String message, @JsonProperty("developerHint") String developerHint) {
+        super(message, httpStatusCode, developerHint);
     }
 
     public RequestException(String message) {

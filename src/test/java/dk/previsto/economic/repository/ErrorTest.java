@@ -5,6 +5,7 @@ import dk.previsto.economic.exception.ApiException;
 import dk.previsto.economic.exception.AuthenticationException;
 import dk.previsto.economic.exception.RequestException;
 import dk.previsto.economic.exception.ResourceNotFoundException;
+import dk.previsto.economic.model.Customer;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -58,7 +59,7 @@ public class ErrorTest {
         mockServer.expect(method(HttpMethod.GET)).andRespond(generateBadRequestResponse());
         
         try {
-            Contact entity = resource.get("232132");
+            Customer entity = resource.get("232132");
             mockServer.verify();
             Assert.fail("Should have thrown exception");
         } catch(RequestException ex) {
@@ -76,7 +77,7 @@ public class ErrorTest {
         mockServer.expect(method(HttpMethod.GET)).andRespond(generateServerErrorResponse());
         
         try {
-            Contact entity = resource.get("232132");
+            Customer entity = resource.get("232132");
             mockServer.verify();
             Assert.fail("Should have thrown exception");
         } catch(ApiException ex) {
@@ -94,7 +95,7 @@ public class ErrorTest {
         mockServer.expect(method(HttpMethod.GET)).andRespond(generateUnauthorizedResponse());
         
         try {
-            Contact entity = resource.get("232132");
+            Customer entity = resource.get("232132");
             mockServer.verify();
             Assert.fail("Should have thrown exception");
         } catch(AuthenticationException ex) {
@@ -112,7 +113,7 @@ public class ErrorTest {
         mockServer.expect(method(HttpMethod.GET)).andRespond(generateNotFoundResponse());
         
         try {
-            Contact entity = resource.get("232132");
+            Customer entity = resource.get("232132");
             Assert.assertNull(entity);
             mockServer.verify();
         } catch(ResourceNotFoundException ex) {

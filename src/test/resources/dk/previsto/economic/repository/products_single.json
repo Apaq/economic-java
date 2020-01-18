@@ -1,22 +1,45 @@
 {
-  "meta": {
-    "statusCode": 200,
-    "success": true,
-    "time": 0.020292997360229
+  "productNumber": "334420410410",
+  "name": "Updated product",
+  "costPrice": 0.00,
+  "recommendedPrice": 0.00,
+  "salesPrice": 100.00,
+  "barred": false,
+  "lastUpdated": "2020-01-10T22:01:00Z",
+  "productGroup": {
+    "productGroupNumber": 1,
+    "name": "Varer m/moms",
+    "salesAccounts": "https://restapi.e-conomic.com/product-groups/1/sales-accounts",
+    "products": "https://restapi.e-conomic.com/product-groups/1/products",
+    "self": "https://restapi.e-conomic.com/product-groups/1"
   },
-  "product": {
-    "id": "ksSgZEGPQmGohQ9eWxVOoQ",
-    "organizationId": "07WgjDjARrWDUR0FAqEVEg",
-    "name": "Vinduespolering",
-    "description": "",
-    "accountId": "jIq5LqhoQm6fPS6xJx1Ctg",
-    "inventoryAccountId": null,
-    "productNo": "WC_PREVISTO",
-    "suppliersProductNo": "",
-    "salesTaxRulesetId": null,
-    "isArchived": false,
-    "isInInventory": false,
-    "imageId": null,
-    "imageUrl": null
-  }
+  "inventory": {
+    "available": 0.0,
+    "inStock": 0.0,
+    "orderedFromSuppliers": 0.0,
+    "orderedByCustomers": 0.0,
+    "packageVolume": 0.00,
+    "recommendedCostPrice": 0.00
+  },
+  "invoices": {
+    "drafts": "https://restapi.e-conomic.com/products/%22334420410410%22/invoices/drafts",
+    "booked": "https://restapi.e-conomic.com/products/%22334420410410%22/invoices/booked",
+    "self": "https://restapi.e-conomic.com/products/%22334420410410%22/invoices"
+  },
+  "pricing": {
+    "currencySpecificSalesPrices": "https://restapi.e-conomic.com/products/%22334420410410%22/pricing/currency-specific-sales-prices"
+  },
+  "metaData": {
+    "delete": {
+      "description": "Delete this product.",
+      "href": "https://restapi.e-conomic.com/products/%22334420410410%22",
+      "httpMethod": "delete"
+    },
+    "replace": {
+      "description": "Replace this product.",
+      "href": "https://restapi.e-conomic.com/products/%22334420410410%22",
+      "httpMethod": "put"
+    }
+  },
+  "self": "https://restapi.e-conomic.com/products/%22334420410410%22"
 }

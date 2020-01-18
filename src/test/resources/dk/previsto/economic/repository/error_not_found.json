@@ -1,9 +1,7 @@
 {
-  "meta": {
-    "statusCode": 404,
-    "success": false
-  },
-  "errorMessage": "No `contact` record with id `hSAz8KBCTPudbq4mBrvvaw` was found.",
-  "errorCode": "RECORD_NOT_FOUND",
-  "helpUrl": "https://billysbilling.com/api"
+  "message": "Product \"33442041041\" not found.",
+  "developerHint": "Please take a look at https://restapi.e-conomic.com/products for a list of products.",
+  "logId": "5570806259e2efd4-EWR",
+  "httpStatusCode": 404,
+  "logTime": "2020-01-18T13:16:41"
 }

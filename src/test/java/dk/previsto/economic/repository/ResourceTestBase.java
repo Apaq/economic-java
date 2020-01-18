@@ -3,9 +3,14 @@ package dk.previsto.economic.repository;
 import dk.previsto.economic.ErrorHandler;
 
 import java.util.List;
+
+import dk.previsto.economic.model.Entity;
+import dk.previsto.economic.net.RestTemplateHelper;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+
+import org.springframework.data.domain.Persistable;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,6 +34,7 @@ public abstract class ResourceTestBase<T extends Entity> {
     public ResourceTestBase(Resource<T> resource, Class type) {
         this.resource = resource;
         this.resource.restTemplate.setErrorHandler(new ErrorHandler());
+        RestTemplateHelper.configureForEconomicJargon(this.resource.restTemplate);
         this.restTemplate = resource.restTemplate;
         this.resourceName = resource.resourceName;
         this.type = type;
@@ -40,6 +46,7 @@ public abstract class ResourceTestBase<T extends Entity> {
     }
     
     protected abstract String generateSingularId();
+    protected abstract String generateExpectedGetParams();
     protected abstract String generateExpectedGetQueryParams();
     protected abstract DefaultResponseCreator generateExpectedGetResponse();
     protected abstract DefaultResponseCreator generateExpectedFindAllResponse();
@@ -67,7 +74,7 @@ public abstract class ResourceTestBase<T extends Entity> {
         System.out.println("get");
         String id = generateSingularId();
         
-        String queryParams = generateExpectedGetQueryParams();
+        String queryParams = generateExpectedGetParams();
         mockServer.expect(requestTo(resource.serviceUrl + "/" + resourceName + "/" + id + queryParams)).andExpect(method(HttpMethod.GET))
                 .andRespond(generateExpectedGetResponse());
         T entity = resource.get(id);
@@ -81,7 +88,7 @@ public abstract class ResourceTestBase<T extends Entity> {
         System.out.println("get");
         String id = "NONE";
         
-        String queryParams = generateExpectedGetQueryParams();
+        String queryParams = generateExpectedGetParams();
         mockServer.expect(requestTo(resource.serviceUrl + "/" + resourceName + "/" + id + queryParams)).andExpect(method(HttpMethod.GET))
                 .andRespond(withStatus(HttpStatus.NOT_FOUND).body(Util.readResourceFromFile("error_not_found.json")).contentType(MediaType.APPLICATION_JSON));
         T entity = resource.get(id);

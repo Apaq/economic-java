@@ -2,18 +2,19 @@ package dk.previsto.economic.exception;
 
 public abstract class EconomicException extends RuntimeException {
 
-    private String errorCode;
-    private ExceptionMeta meta;
-    
-    public EconomicException(String message, String errorCode, ExceptionMeta meta) {
+    private String httpStatusCode;
+    private String developerHint;
+
+    public EconomicException(String message, String httpStatusCode, String developerHint) {
         super(message, null);
-        this.errorCode = errorCode;
-        this.meta = meta;
+        this.httpStatusCode = httpStatusCode;
+        this.developerHint = developerHint;
     }
 
-    public EconomicException(String message, String errorCode, Throwable e) {
+    public EconomicException(String message, String httpStatusCode, String developerHint, Throwable e) {
         super(message, e);
-        this.errorCode = errorCode;
+        this.httpStatusCode = httpStatusCode;
+        this.developerHint = developerHint;
     }
 
     public EconomicException(String message) {
@@ -26,20 +27,19 @@ public abstract class EconomicException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 
-    public String getErrorCode() {
-        return errorCode;
+    public String getHttpStatusCode() {
+        return httpStatusCode;
     }
 
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
+    public void setHttpStatusCode(String httpStatusCode) {
+        this.httpStatusCode = httpStatusCode;
     }
 
-    public ExceptionMeta getMeta() {
-        return meta;
+    public String getDeveloperHint() {
+        return developerHint;
     }
 
-    public void setMeta(ExceptionMeta meta) {
-        this.meta = meta;
+    public void setDeveloperHint(String developerHint) {
+        this.developerHint = developerHint;
     }
-
 }

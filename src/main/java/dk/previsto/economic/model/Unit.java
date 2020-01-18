@@ -5,7 +5,7 @@ public class Unit {
     private String self;
     private int unitNumber;
     private double unitCostPrice;
-    private double unitNetPRice;
+    private double unitNetPrice;
     private double vatAmount;
 
 }

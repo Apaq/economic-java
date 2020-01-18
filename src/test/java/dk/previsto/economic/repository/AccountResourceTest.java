@@ -28,8 +28,13 @@ public class AccountResourceTest extends ResourceTestBase<Account> {
     }
 
     @Override
+    protected String generateExpectedGetParams() {
+        return "";
+    }
+
+    @Override
     protected String generateExpectedGetQueryParams() {
-        return "?include=account.group";
+        return "?skipPages=0&pageSize=1000";
     }
 
     @Override
@@ -45,7 +50,7 @@ public class AccountResourceTest extends ResourceTestBase<Account> {
     @Override
     protected void doCheckEntity(Account entity) {
         if ("LpR6sv4MREW1aMlJHtASOg".equals(entity.getId())) {
-            assertEquals(7210, entity.getAccountNo());
+            assertEquals(7210, entity.getAccountNumber());
             return;
         }
 

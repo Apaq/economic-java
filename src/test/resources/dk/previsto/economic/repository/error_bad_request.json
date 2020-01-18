@@ -1,14 +1,7 @@
 {
-  "meta": {
-    "statusCode": 400,
-    "success": false
-  },
-  "errorMessage": "Invalid record",
-  "errorCode": "INVALID_RECORD",
-  "helpUrl": "https://billysbilling.com/api",
-  "validationErrors": {
-    "invoice": {
-      "message": "Invoices must have at least one invoice line."
-    }
-  }
+  "message": "HttpMethod 'PATCH' is not allowed on /products",
+  "developerHint": "The method is either just not implemented yet or we don't have any plans to allow it. If you need it, send us a feature request and explain to us what you need it for.",
+  "logId": "557081a95e9eefd4-EWR",
+  "httpStatusCode": 405,
+  "logTime": "2020-01-18T13:17:33"
 }

@@ -22,9 +22,9 @@ public class EconomicClientFactoryAutoConfigurationTest {
 
     @Test
     public void defaultNativeConnectionFactory() {
-        load(EmptyConfiguration.class, "billy.serviceUrl=https://api.billysbilling.com/v2");
+        load(EmptyConfiguration.class, "economic.serviceUrl=https://restapi.e-conomic.com");
         EconomicClientFactory factory = this.context.getBean(EconomicClientFactory.class);
-        assertEquals("https://api.billysbilling.com/v2", factory.getServiceUrl());
+        assertEquals("https://restapi.e-conomic.com", factory.getServiceUrl());
     }
 
     @Configuration

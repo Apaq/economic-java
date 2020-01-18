@@ -2,8 +2,12 @@ package dk.previsto.economic.repository;
 
 import java.util.Arrays;
 import java.util.List;
+
+import dk.previsto.economic.model.Product;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.client.response.DefaultResponseCreator;
+
+import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
 import org.springframework.test.web.client.RequestMatcher;
@@ -25,6 +29,11 @@ public class ProductResourceTest extends ResourceTestBase<Product> {
     }
 
     @Override
+    protected String generateExpectedGetParams() {
+        return "";
+    }
+
+    @Override
     protected String generateExpectedGetQueryParams() {
         return "";
     }
@@ -43,7 +52,7 @@ public class ProductResourceTest extends ResourceTestBase<Product> {
     @Override
     protected void doCheckEntity(Product entity) {
         if ("ksSgZEGPQmGohQ9eWxVOoQ".equals(entity.getId())) {
-            assertEquals("WC_PREVISTO", entity.getProductNo());
+            assertEquals("WC_PREVISTO", entity.getProductNumber());
             return;
         }
 

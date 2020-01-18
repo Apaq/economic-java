@@ -1,13 +1,15 @@
 package dk.previsto.economic.exception;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ResourceNotFoundException extends EconomicException {
     
     @JsonCreator
-    public ResourceNotFoundException(@JsonProperty(value = "errorCode") String errorCode, @JsonProperty(value = "errorMessage") String errorMessage, @JsonProperty("helpUrl") String helpUrl, @JsonProperty("meta") ExceptionMeta meta) {
-        super(errorMessage, errorCode, meta);
+    public ResourceNotFoundException(@JsonProperty(value = "httpStatusCode") String httpStatusCode, @JsonProperty(value = "message") String message, @JsonProperty("developerHint") String developerHint) {
+        super(message, httpStatusCode, developerHint);
     }
-    
+
 }

@@ -5,10 +5,10 @@ import org.springframework.data.domain.Persistable;
 
 import java.time.Instant;
 
-public class Customer implements Persistable<Integer> {
+public class Customer extends Entity {
 
     private String address;//	string			510				Address for the customer including street and number.
-    private CustomerContactReference atttention;
+    private CustomerContactReference attention;
     private double balance;
     private boolean barred; //	boolean							Boolean indication of whether the customer is barred from invoicing.
     private String city;//	string			50				The customer’s city.
@@ -51,13 +51,13 @@ public class Customer implements Persistable<Integer> {
     private String zip; //	string			30				The customer’s postcode.
 
     @Override
-    public Integer getId() {
-        return customerNumber;
+    public String getId() {
+        return customerNumber == null ? null : Integer.toString(customerNumber);
     }
 
     @Override
-    public boolean isNew() {
-        return customerNumber == null;
+    public void setId(String id) {
+        this.customerNumber = Integer.parseInt(id);
     }
 
     public String getAddress() {
@@ -68,12 +68,12 @@ public class Customer implements Persistable<Integer> {
         this.address = address;
     }
 
-    public CustomerContactReference getAtttention() {
-        return atttention;
+    public CustomerContactReference getAttention() {
+        return attention;
     }
 
-    public void setAtttention(CustomerContactReference atttention) {
-        this.atttention = atttention;
+    public void setAttention(CustomerContactReference atttention) {
+        this.attention = atttention;
     }
 
     public double getBalance() {

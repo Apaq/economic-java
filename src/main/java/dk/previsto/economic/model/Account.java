@@ -6,7 +6,7 @@ import dk.previsto.economic.model.enums.AccountType;
 import dk.previsto.economic.model.enums.RecordType;
 import org.springframework.data.domain.Persistable;
 
-public class Account implements Persistable<Integer> {
+public class Account extends Entity {
      private Integer accountNumber;//	integer				The account’s number.
      private AccountType accountType; //	Enum			profitAndLoss, status, totalFrom, heading, headingStart, sumInterval, sumAlpha	The type of account in the chart of accounts.
      private String accountingYears; //	string	uri			A link to a list of accounting years for which the account is usable.
@@ -36,13 +36,13 @@ public class Account implements Persistable<Integer> {
 
 
     @Override
-    public Integer getId() {
-        return accountNumber;
+    public String getId() {
+        return accountNumber == null ? null : Integer.toString(accountNumber);
     }
 
     @Override
-    public boolean isNew() {
-        return accountNumber == null;
+    public void setId(String id) {
+        this.accountNumber = Integer.parseInt(id);
     }
 
     public int getAccountNumber() {

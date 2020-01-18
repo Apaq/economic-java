@@ -1,9 +1,8 @@
 {
-  "meta": {
-    "statusCode": 401,
-    "success": false
-  },
-  "errorMessage": "Request body should consist of a JSON document with an object as root.",
-  "errorCode": "INVALID_REQUEST_BODY",
-  "helpUrl": "https://billysbilling.com/api"
+  "message": "Login to API server failed.",
+  "developerHint": "Please take a look at https://restapi.e-conomic.com and follow the links to help on authorization, or use the word demo for both tokens.",
+  "logId": "557080cfef46efd4-EWR",
+  "httpStatusCode": 401,
+  "demoLink": "https://restapi.e-conomic.com/products/%2233442041041%22?demo=true",
+  "logTime": "2020-01-18T13:16:58"
 }

@@ -23,8 +23,9 @@ public class EconomicClientAutoConfigurationTest {
     @Test
     public void defaultNativeConnectionFactory() {
         load(EmptyConfiguration.class, 
-                "billy.serviceUrl=https://api.billysbilling.com/v2", 
-                "billy.apiKey=qwerty123");
+                "economic.serviceUrl=https://restapi.e-conomic.com",
+                "economic.appSecretToken=qwerty123",
+                "economic.agreementGrantToken=1321");
         EconomicClient client = this.context.getBean(EconomicClient.class);
         assertEquals("qwerty123", client.getAppSecretToken());
     }
