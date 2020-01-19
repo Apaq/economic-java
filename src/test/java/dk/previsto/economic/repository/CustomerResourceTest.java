@@ -49,10 +49,10 @@ public class CustomerResourceTest extends ResourceTestBase<Customer> {
     @Override
     protected List<RequestMatcher> generateExpectedSaveRequest() {
         List<RequestMatcher> matchers = new ArrayList<>();
-        matchers.add(jsonPath("$.contact.isArchived").value(false));
-        matchers.add(jsonPath("$.contact.name").isEmpty());
-        matchers.add(jsonPath("$.contact.paymentTermsDays").doesNotExist());
-        matchers.add(jsonPath("$.contact.paymentTermsMode").doesNotExist());
+        //matchers.add(jsonPath("$.contact.isBarred").value(false));
+        matchers.add(jsonPath("$.name").isEmpty());
+        //matchers.add(jsonPath("$.contact.paymentTermsDays").doesNotExist());
+        //matchers.add(jsonPath("$.contact.paymentTermsMode").doesNotExist());
         return matchers;
     }
 

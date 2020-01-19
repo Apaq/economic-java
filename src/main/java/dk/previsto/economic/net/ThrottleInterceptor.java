@@ -17,7 +17,7 @@ public class ThrottleInterceptor implements ClientHttpRequestInterceptor {
 
     private static final Logger LOG = LoggerFactory.getLogger(ThrottleInterceptor.class);
     private static long lastRequest = -1;
-    private static final long TIME_BETWEEN_REQUESTS = 500;
+    private static final long TIME_BETWEEN_REQUESTS = 100;
 
     @Override
     public synchronized ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {

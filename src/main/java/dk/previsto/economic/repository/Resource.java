@@ -120,7 +120,7 @@ public abstract class Resource<T extends Entity> {
             persistedEntity = entity;
         }
 
-        return get(persistedEntity.getId());
+        return persistedEntity;
     }
 
     protected URI buildUri() {

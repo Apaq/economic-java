@@ -43,7 +43,7 @@ public class DraftInvoiceResourceTest extends ResourceTestBase<DraftInvoice> {
 
     @Override
     protected String generateSingularId() {
-        return "cSHBqWWITexZvQy29lqpYg";
+        return "123";
     }
     
     @Override
