@@ -65,7 +65,7 @@ node {
             }
         }
 
-        /*stage('Release it') {
+        stage('Release it') {
             withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'github-ci', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
 
                 withMaven(
@@ -80,7 +80,7 @@ node {
 
                 }
             }
-        }*/
+        }
 
        
     }
