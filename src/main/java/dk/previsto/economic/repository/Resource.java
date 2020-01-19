@@ -10,10 +10,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import dk.previsto.economic.model.Entity;
 import org.slf4j.Logger;
@@ -35,12 +32,14 @@ public abstract class Resource<T extends Entity> {
     protected final String serviceUrl;
     protected String resourceName;
     private Class clazz;
+    private boolean queryLacksFields = false;
 
-    public Resource(Class clazz, String resourceName, RestTemplate restTemplate, String serviceUrl) {
+    public Resource(Class clazz, String resourceName, RestTemplate restTemplate, String serviceUrl, boolean queryLacksFields) {
         this.resourceName = resourceName;
         this.restTemplate = restTemplate;
         this.serviceUrl = serviceUrl;
         this.clazz = clazz;
+        this.queryLacksFields = queryLacksFields;
     }
 
     public List<T> findAll() {
@@ -73,6 +72,15 @@ public abstract class Resource<T extends Entity> {
             } catch (NumberFormatException ex) {
                 LOG.info("Unable to parse count.", ex);
             }
+        }
+
+        if(queryLacksFields) {
+            // We need to request each single entity to get all fields
+            List<T> tmp = new ArrayList<>();
+            for(T e : result) {
+                tmp.add(get(e.getId()));
+            }
+            result = (T[]) tmp.toArray(result);
         }
 
         return new PageImpl<>(Arrays.asList(result), pageRequest, count);

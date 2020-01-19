@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 public class CustomerResource extends Resource<Customer>{
 
     public CustomerResource(RestTemplate restTemplate, String serviceUrl) {
-        super(Customer.class, "customers", restTemplate, serviceUrl);
+        super(Customer.class, "customers", restTemplate, serviceUrl, false);
     }
     
 }

@@ -61,6 +61,7 @@ public abstract class ResourceTestBase<T extends Entity> {
         String queryParams = generateExpectedGetQueryParams();
         mockServer.expect(requestTo(resource.serviceUrl + "/" + resourceName + queryParams)).andExpect(method(HttpMethod.GET))
                 .andRespond(generateExpectedFindAllResponse());
+
         List<T> entities = resource.findAll();
         for(T entity : entities) {
             doCheckEntity(entity);

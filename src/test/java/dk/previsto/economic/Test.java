@@ -18,5 +18,8 @@ public class Test {
         Page<Product> products = client.getProductResource().findAll(new PageRequest(0, 2));
         System.out.println(products);
 
+        Page<DraftInvoice> draftInvoices = client.getDraftInvoiceResource().findAll(new PageRequest(0, 2));
+        System.out.println(products);
+
     }
 }

@@ -1,13 +1,13 @@
 package dk.previsto.economic.model.references;
 
 public class PdfReference {
-    private String self;
+    private String download;
 
-    public String getSelf() {
-        return self;
+    public String getDownload() {
+        return download;
     }
 
-    public void setSelf(String self) {
-        this.self = self;
+    public void setDownload(String download) {
+        this.download = download;
     }
 }

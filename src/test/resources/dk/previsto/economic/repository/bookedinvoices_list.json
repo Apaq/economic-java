@@ -1,0 +1,111 @@
+{
+  "collection": [
+    {
+      "bookedInvoiceNumber": 10001,
+      "date": "2011-10-10",
+      "currency": "DKK",
+      "exchangeRate": 100.000000,
+      "netAmount": 100000.00,
+      "netAmountInBaseCurrency": 100000.00,
+      "grossAmount": 125000.00,
+      "grossAmountInBaseCurrency": 125000.00,
+      "vatAmount": 25000.00,
+      "roundingAmount": 0.00,
+      "remainder": 0.00,
+      "remainderInBaseCurrency": 0.00,
+      "dueDate": "2011-11-09",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "daysOfCredit": 30,
+        "name": "Netto 30 dage",
+        "paymentTermsType": "net",
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "customer": {
+        "customerNumber": 1000,
+        "self": "https://restapi.e-conomic.com/customers/1000"
+      },
+      "recipient": {
+        "name": "Møbelfabrikken A/S",
+        "address": "Møtrikvej 1",
+        "zip": "2750",
+        "city": "Ballerup",
+        "vatZone": {
+          "name": "Domestic",
+          "vatZoneNumber": 1,
+          "enabledForCustomer": true,
+          "enabledForSupplier": true,
+          "self": "https://restapi.e-conomic.com/vat-zones/1"
+        }
+      },
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "pdf": {
+        "download": "https://restapi.e-conomic.com/invoices/booked/10001/pdf"
+      },
+      "sent": "https://restapi.e-conomic.com/invoices/booked/10001/sent",
+      "self": "https://restapi.e-conomic.com/invoices/booked/10001"
+    },
+    {
+      "bookedInvoiceNumber": 10002,
+      "date": "2011-10-31",
+      "currency": "DKK",
+      "exchangeRate": 100.000000,
+      "netAmount": 50000.00,
+      "netAmountInBaseCurrency": 50000.00,
+      "grossAmount": 62500.00,
+      "grossAmountInBaseCurrency": 62500.00,
+      "vatAmount": 12500.00,
+      "roundingAmount": 0.00,
+      "remainder": 0.00,
+      "remainderInBaseCurrency": 0.00,
+      "dueDate": "2011-11-30",
+      "paymentTerms": {
+        "paymentTermsNumber": 5,
+        "daysOfCredit": 30,
+        "name": "Netto 30 dage",
+        "paymentTermsType": "net",
+        "self": "https://restapi.e-conomic.com/payment-terms/5"
+      },
+      "customer": {
+        "customerNumber": 1001,
+        "self": "https://restapi.e-conomic.com/customers/1001"
+      },
+      "recipient": {
+        "name": "IT Specialisterne ApS",
+        "address": "Idevej 7",
+        "zip": "8850",
+        "city": "Bjerringbro",
+        "vatZone": {
+          "name": "Domestic",
+          "vatZoneNumber": 1,
+          "enabledForCustomer": true,
+          "enabledForSupplier": true,
+          "self": "https://restapi.e-conomic.com/vat-zones/1"
+        }
+      },
+      "layout": {
+        "layoutNumber": 19,
+        "self": "https://restapi.e-conomic.com/layouts/19"
+      },
+      "pdf": {
+        "download": "https://restapi.e-conomic.com/invoices/booked/10002/pdf"
+      },
+      "sent": "https://restapi.e-conomic.com/invoices/booked/10002/sent",
+      "self": "https://restapi.e-conomic.com/invoices/booked/10002"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 20,
+    "results": 29583,
+    "resultsWithoutFilter": 29583,
+    "firstPage": "https://restapi.e-conomic.com/invoices/booked?skippages=0&pagesize=20",
+    "nextPage": "https://restapi.e-conomic.com/invoices/booked?skippages=1&pagesize=20",
+    "lastPage": "https://restapi.e-conomic.com/invoices/booked?skippages=1479&pagesize=20"
+  },
+  "self": "https://restapi.e-conomic.com/invoices/booked"
+}

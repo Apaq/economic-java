@@ -1,5 +1,6 @@
 package dk.previsto.economic.net;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -19,7 +20,7 @@ public class RestTemplateHelper {
                 ObjectMapper om = ((MappingJackson2HttpMessageConverter)converter).getObjectMapper();
                 om.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
                 om.enable(SerializationFeature.INDENT_OUTPUT);
-                //om.setPropertyNamingStrategy(PropertyNamingStrategy.UPPER_CAMEL_CASE);
+                om.setSerializationInclusion(JsonInclude.Include.NON_NULL);
                 om.registerModule(new JavaTimeModule());
             }
         }

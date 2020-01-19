@@ -7,7 +7,7 @@ import org.springframework.web.client.RestTemplate;
 public class BookedInvoiceResource extends Resource<BookedInvoice>{
 
     public BookedInvoiceResource(RestTemplate restTemplate, String serviceUrl) {
-        super(DraftInvoice.class, "invoices/draft", restTemplate, serviceUrl);
+        super(BookedInvoice.class, "invoices/booked", restTemplate, serviceUrl, false);
     }
 
 }

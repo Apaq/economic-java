@@ -1,0 +1,66 @@
+{
+  "bookedInvoiceNumber": 10002,
+  "date": "2011-10-31",
+  "currency": "DKK",
+  "exchangeRate": 100.000000,
+  "netAmount": 50000.00,
+  "netAmountInBaseCurrency": 50000.00,
+  "grossAmount": 62500.00,
+  "grossAmountInBaseCurrency": 62500.00,
+  "vatAmount": 12500.00,
+  "roundingAmount": 0.00,
+  "remainder": 0.00,
+  "remainderInBaseCurrency": 0.00,
+  "dueDate": "2011-11-30",
+  "paymentTerms": {
+    "paymentTermsNumber": 5,
+    "daysOfCredit": 30,
+    "name": "Netto 30 dage",
+    "paymentTermsType": "net",
+    "self": "https://restapi.e-conomic.com/payment-terms/5"
+  },
+  "customer": {
+    "customerNumber": 1001,
+    "self": "https://restapi.e-conomic.com/customers/1001"
+  },
+  "recipient": {
+    "name": "IT Specialisterne ApS",
+    "address": "Idevej 7",
+    "zip": "8850",
+    "city": "Bjerringbro",
+    "vatZone": {
+      "name": "Domestic",
+      "vatZoneNumber": 1,
+      "enabledForCustomer": true,
+      "enabledForSupplier": true,
+      "self": "https://restapi.e-conomic.com/vat-zones/1"
+    }
+  },
+  "layout": {
+    "layoutNumber": 19,
+    "self": "https://restapi.e-conomic.com/layouts/19"
+  },
+  "pdf": {
+    "download": "https://restapi.e-conomic.com/invoices/booked/10002/pdf"
+  },
+  "lines": [
+    {
+      "lineNumber": 1,
+      "sortKey": 1,
+      "description": "Afregning efter tilbud",
+      "quantity": 1.00,
+      "unitNetPrice": 50000.00,
+      "discountPercentage": 0.00,
+      "unitCostPrice": 0.00,
+      "vatRate": 25.00000000,
+      "vatAmount": 12500.0000,
+      "totalNetAmount": 50000.00,
+      "product": {
+        "productNumber": "3",
+        "self": "https://restapi.e-conomic.com/products/3"
+      }
+    }
+  ],
+  "sent": "https://restapi.e-conomic.com/invoices/booked/10002/sent",
+  "self": "https://restapi.e-conomic.com/invoices/booked/10002"
+}

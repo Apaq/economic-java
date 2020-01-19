@@ -16,6 +16,7 @@ public class PagedResultInterceptor implements ClientHttpRequestInterceptor {
             "/accounts",
             "/customers",
             "/invoices/drafts",
+            "invoices/booked",
             "/products"
     };
 

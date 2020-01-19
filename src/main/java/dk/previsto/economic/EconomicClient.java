@@ -98,10 +98,14 @@ public class EconomicClient {
         return new CustomerResource(restTemplate, serviceUrl);
     }
     
-    public DraftInvoiceResource getInvoiceResource() {
+    public DraftInvoiceResource getDraftInvoiceResource() {
         return new DraftInvoiceResource(restTemplate, serviceUrl);
     }
-    
+
+    public BookedInvoiceResource getBookedInvoiceResource() {
+        return new BookedInvoiceResource(restTemplate, serviceUrl);
+    }
+
     public ProductResource getProductResource() {
         return new ProductResource(restTemplate, serviceUrl);
     }

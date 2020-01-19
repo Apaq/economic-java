@@ -8,4 +8,36 @@ public class InvoiceReferences {
     private String other;
     private EmployeeReference salesPerson;
     private EmployeeReference vendorReference;
+
+    public CustomerContactReference getCustomerContact() {
+        return customerContact;
+    }
+
+    public void setCustomerContact(CustomerContactReference customerContact) {
+        this.customerContact = customerContact;
+    }
+
+    public String getOther() {
+        return other;
+    }
+
+    public void setOther(String other) {
+        this.other = other;
+    }
+
+    public EmployeeReference getSalesPerson() {
+        return salesPerson;
+    }
+
+    public void setSalesPerson(EmployeeReference salesPerson) {
+        this.salesPerson = salesPerson;
+    }
+
+    public EmployeeReference getVendorReference() {
+        return vendorReference;
+    }
+
+    public void setVendorReference(EmployeeReference vendorReference) {
+        this.vendorReference = vendorReference;
+    }
 }

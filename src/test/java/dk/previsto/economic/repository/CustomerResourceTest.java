@@ -50,7 +50,7 @@ public class CustomerResourceTest extends ResourceTestBase<Customer> {
     protected List<RequestMatcher> generateExpectedSaveRequest() {
         List<RequestMatcher> matchers = new ArrayList<>();
         //matchers.add(jsonPath("$.contact.isBarred").value(false));
-        matchers.add(jsonPath("$.name").isEmpty());
+        matchers.add(jsonPath("$.name").doesNotExist());
         //matchers.add(jsonPath("$.contact.paymentTermsDays").doesNotExist());
         //matchers.add(jsonPath("$.contact.paymentTermsMode").doesNotExist());
         return matchers;

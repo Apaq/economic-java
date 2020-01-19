@@ -7,6 +7,7 @@ import dk.previsto.economic.model.references.ProjectReference;
 import org.springframework.data.domain.Persistable;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class DraftInvoice extends Entity {
     private double costPriceInBaseCurrency;
@@ -22,6 +23,7 @@ public class DraftInvoice extends Entity {
     private double marginPercentage;
     private double netAmount;
     private double netAmountBaseCurrency;
+    private List<Line> lines;
     private Notes notes;
     private PaymentTermsReference paymentTerms;
     private PdfReference pdf;
@@ -234,5 +236,13 @@ public class DraftInvoice extends Entity {
 
     public void setVatAmount(double vatAmount) {
         this.vatAmount = vatAmount;
+    }
+
+    public List<Line> getLines() {
+        return lines;
+    }
+
+    public void setLines(List<Line> lines) {
+        this.lines = lines;
     }
 }
