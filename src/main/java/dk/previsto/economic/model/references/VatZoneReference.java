@@ -2,7 +2,7 @@ package dk.previsto.economic.model.references;
 
 public class VatZoneReference {
     private String self;
-    private int vatZoneNumber;
+    private Integer vatZoneNumber;
 
     public String getSelf() {
         return self;
@@ -12,11 +12,11 @@ public class VatZoneReference {
         this.self = self;
     }
 
-    public int getVatZoneNumber() {
+    public Integer getVatZoneNumber() {
         return vatZoneNumber;
     }
 
-    public void setVatZoneNumber(int vatZoneNumber) {
+    public void setVatZoneNumber(Integer vatZoneNumber) {
         this.vatZoneNumber = vatZoneNumber;
     }
 }

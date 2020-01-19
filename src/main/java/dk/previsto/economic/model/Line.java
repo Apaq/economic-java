@@ -9,64 +9,62 @@ public class Line {
     private LocalDate deliveryDate;
     private DepartmentalDistributionReference departmentalDistribution;
     private String description;
-    private double discountPercentage;
-    private int lineNumber;
+    private Double discountPercentage;
     private ProductReference product;
-    private double quantity;
-    private int sortKey;
-    private double totalNetAmount;
-    private double marginBaseCurrency;
-    private double marginPercentage;
-    private double unitNetPrice;
-    private double unitCostPrice;
-    private double vatAmount;
-    private double vatRate;
+    private Double quantity;
+    private Double totalNetAmount;
+    private Double marginBaseCurrency;
+    private Double marginPercentage;
+    private Double unitNetPrice;
+    private Double unitCostPrice;
+    private Double vatAmount;
+    private Double vatRate;
 
-    public double getMarginBaseCurrency() {
+    public Double getMarginBaseCurrency() {
         return marginBaseCurrency;
     }
 
-    public void setMarginBaseCurrency(double marginBaseCurrency) {
+    public void setMarginBaseCurrency(Double marginBaseCurrency) {
         this.marginBaseCurrency = marginBaseCurrency;
     }
 
-    public double getMarginPercentage() {
+    public Double getMarginPercentage() {
         return marginPercentage;
     }
 
-    public void setMarginPercentage(double marginPercentage) {
+    public void setMarginPercentage(Double marginPercentage) {
         this.marginPercentage = marginPercentage;
     }
 
-    public double getUnitNetPrice() {
+    public Double getUnitNetPrice() {
         return unitNetPrice;
     }
 
-    public void setUnitNetPrice(double unitNetPrice) {
+    public void setUnitNetPrice(Double unitNetPrice) {
         this.unitNetPrice = unitNetPrice;
     }
 
-    public double getUnitCostPrice() {
+    public Double getUnitCostPrice() {
         return unitCostPrice;
     }
 
-    public void setUnitCostPrice(double unitCostPrice) {
+    public void setUnitCostPrice(Double unitCostPrice) {
         this.unitCostPrice = unitCostPrice;
     }
 
-    public double getVatAmount() {
+    public Double getVatAmount() {
         return vatAmount;
     }
 
-    public void setVatAmount(double vatAmount) {
+    public void setVatAmount(Double vatAmount) {
         this.vatAmount = vatAmount;
     }
 
-    public double getVatRate() {
+    public Double getVatRate() {
         return vatRate;
     }
 
-    public void setVatRate(double vatRate) {
+    public void setVatRate(Double vatRate) {
         this.vatRate = vatRate;
     }
 
@@ -94,21 +92,14 @@ public class Line {
         this.description = description;
     }
 
-    public double getDiscountPercentage() {
+    public Double getDiscountPercentage() {
         return discountPercentage;
     }
 
-    public void setDiscountPercentage(double discountPercentage) {
+    public void setDiscountPercentage(Double discountPercentage) {
         this.discountPercentage = discountPercentage;
     }
 
-    public int getLineNumber() {
-        return lineNumber;
-    }
-
-    public void setLineNumber(int lineNumber) {
-        this.lineNumber = lineNumber;
-    }
 
     public ProductReference getProduct() {
         return product;
@@ -118,27 +109,19 @@ public class Line {
         this.product = product;
     }
 
-    public double getQuantity() {
+    public Double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(double quantity) {
+    public void setQuantity(Double quantity) {
         this.quantity = quantity;
     }
 
-    public int getSortKey() {
-        return sortKey;
-    }
-
-    public void setSortKey(int sortKey) {
-        this.sortKey = sortKey;
-    }
-
-    public double getTotalNetAmount() {
+    public Double getTotalNetAmount() {
         return totalNetAmount;
     }
 
-    public void setTotalNetAmount(double totalNetAmount) {
+    public void setTotalNetAmount(Double totalNetAmount) {
         this.totalNetAmount = totalNetAmount;
     }
 }

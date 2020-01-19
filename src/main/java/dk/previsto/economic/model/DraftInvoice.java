@@ -1,9 +1,6 @@
 package dk.previsto.economic.model;
 
-import dk.previsto.economic.model.references.CustomerReference;
-import dk.previsto.economic.model.references.PaymentTermsReference;
-import dk.previsto.economic.model.references.PdfReference;
-import dk.previsto.economic.model.references.ProjectReference;
+import dk.previsto.economic.model.references.*;
 import org.springframework.data.domain.Persistable;
 
 import java.time.LocalDate;
@@ -11,31 +8,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DraftInvoice extends Entity {
-    private double costPriceInBaseCurrency;
+    private Double costPriceInBaseCurrency;
     private String currency;
     private CustomerReference customer = new CustomerReference();
-    private LocalDate date;
+    private LocalDate date = LocalDate.now();
     private Delivery delivery = new Delivery();
     private Integer draftInvoiceNumber;
     private LocalDate dueDate;
-    private double exchangeRate;
-    private double grossAmount;
-    private double grossAmountBaseCurrency;
-    private double marginPercentage;
-    private double netAmount;
-    private double netAmountBaseCurrency;
+    private Double exchangeRate;
+    private Double grossAmount;
+    private Double grossAmountBaseCurrency;
+    private Double marginPercentage;
+    private Double netAmount;
+    private Double netAmountBaseCurrency;
     private List<Line> lines = new ArrayList<>();
     private Notes notes = new Notes();
     private PaymentTermsReference paymentTerms = new PaymentTermsReference();
     private PdfReference pdf = new PdfReference();
-    private ProjectReference project = new ProjectReference();
-    private Recipient recipient;
+    private ProjectReference project;
+    private Recipient recipient = new Recipient();
     private InvoiceReferences references = new InvoiceReferences();
-    private double roundingAmount;
+    private Double roundingAmount;
     private String self;
     private Soap soap;
     private Templates templates;
-    private double vatAmount;
+    private Double vatAmount;
+    private LayoutReference layout = new LayoutReference();
 
     @Override
     public String getId() {
@@ -47,11 +45,11 @@ public class DraftInvoice extends Entity {
         this.draftInvoiceNumber = Integer.parseInt(id);
     }
 
-    public double getCostPriceInBaseCurrency() {
+    public Double getCostPriceInBaseCurrency() {
         return costPriceInBaseCurrency;
     }
 
-    public void setCostPriceInBaseCurrency(double costPriceInBaseCurrency) {
+    public void setCostPriceInBaseCurrency(Double costPriceInBaseCurrency) {
         this.costPriceInBaseCurrency = costPriceInBaseCurrency;
     }
 
@@ -103,51 +101,51 @@ public class DraftInvoice extends Entity {
         this.dueDate = dueDate;
     }
 
-    public double getExchangeRate() {
+    public Double getExchangeRate() {
         return exchangeRate;
     }
 
-    public void setExchangeRate(double exchangeRate) {
+    public void setExchangeRate(Double exchangeRate) {
         this.exchangeRate = exchangeRate;
     }
 
-    public double getGrossAmount() {
+    public Double getGrossAmount() {
         return grossAmount;
     }
 
-    public void setGrossAmount(double grossAmount) {
+    public void setGrossAmount(Double grossAmount) {
         this.grossAmount = grossAmount;
     }
 
-    public double getGrossAmountBaseCurrency() {
+    public Double getGrossAmountBaseCurrency() {
         return grossAmountBaseCurrency;
     }
 
-    public void setGrossAmountBaseCurrency(double grossAmountBaseCurrency) {
+    public void setGrossAmountBaseCurrency(Double grossAmountBaseCurrency) {
         this.grossAmountBaseCurrency = grossAmountBaseCurrency;
     }
 
-    public double getMarginPercentage() {
+    public Double getMarginPercentage() {
         return marginPercentage;
     }
 
-    public void setMarginPercentage(double marginPercentage) {
+    public void setMarginPercentage(Double marginPercentage) {
         this.marginPercentage = marginPercentage;
     }
 
-    public double getNetAmount() {
+    public Double getNetAmount() {
         return netAmount;
     }
 
-    public void setNetAmount(double netAmount) {
+    public void setNetAmount(Double netAmount) {
         this.netAmount = netAmount;
     }
 
-    public double getNetAmountBaseCurrency() {
+    public Double getNetAmountBaseCurrency() {
         return netAmountBaseCurrency;
     }
 
-    public void setNetAmountBaseCurrency(double netAmountBaseCurrency) {
+    public void setNetAmountBaseCurrency(Double netAmountBaseCurrency) {
         this.netAmountBaseCurrency = netAmountBaseCurrency;
     }
 
@@ -199,11 +197,11 @@ public class DraftInvoice extends Entity {
         this.references = references;
     }
 
-    public double getRoundingAmount() {
+    public Double getRoundingAmount() {
         return roundingAmount;
     }
 
-    public void setRoundingAmount(double roundingAmount) {
+    public void setRoundingAmount(Double roundingAmount) {
         this.roundingAmount = roundingAmount;
     }
 
@@ -231,11 +229,11 @@ public class DraftInvoice extends Entity {
         this.templates = templates;
     }
 
-    public double getVatAmount() {
+    public Double getVatAmount() {
         return vatAmount;
     }
 
-    public void setVatAmount(double vatAmount) {
+    public void setVatAmount(Double vatAmount) {
         this.vatAmount = vatAmount;
     }
 
@@ -245,5 +243,13 @@ public class DraftInvoice extends Entity {
 
     public void setLines(List<Line> lines) {
         this.lines = lines;
+    }
+
+    public LayoutReference getLayout() {
+        return layout;
+    }
+
+    public void setLayout(LayoutReference layout) {
+        this.layout = layout;
     }
 }

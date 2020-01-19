@@ -1,14 +1,14 @@
 package dk.previsto.economic.model.references;
 
 public class LayoutReference {
-    private int layoutNumber;
+    private Integer layoutNumber;
     private String self;
 
-    public int getLayoutNumber() {
+    public Integer getLayoutNumber() {
         return layoutNumber;
     }
 
-    public void setLayoutNumber(int layoutNumber) {
+    public void setLayoutNumber(Integer layoutNumber) {
         this.layoutNumber = layoutNumber;
     }
 

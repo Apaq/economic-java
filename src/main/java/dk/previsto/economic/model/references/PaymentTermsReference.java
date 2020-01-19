@@ -5,7 +5,7 @@ import dk.previsto.economic.model.enums.PaymentTermsType;
 public class PaymentTermsReference {
     private int daysOfCredit;
     private String name;
-    private int paymentTermsNumber;
+    private Integer paymentTermsNumber;
     private PaymentTermsType paymentTermsType;
     private String self;
 
@@ -25,11 +25,11 @@ public class PaymentTermsReference {
         this.name = name;
     }
 
-    public int getPaymentTermsNumber() {
+    public Integer getPaymentTermsNumber() {
         return paymentTermsNumber;
     }
 
-    public void setPaymentTermsNumber(int paymentTermsNumber) {
+    public void setPaymentTermsNumber(Integer paymentTermsNumber) {
         this.paymentTermsNumber = paymentTermsNumber;
     }
 

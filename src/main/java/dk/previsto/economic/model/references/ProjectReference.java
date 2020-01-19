@@ -1,14 +1,14 @@
 package dk.previsto.economic.model.references;
 
 public class ProjectReference {
-    private int projectNumber;
+    private Integer projectNumber;
     private String self;
 
-    public int getProjectNumber() {
+    public Integer getProjectNumber() {
         return projectNumber;
     }
 
-    public void setProjectNumber(int projectNumber) {
+    public void setProjectNumber(Integer projectNumber) {
         this.projectNumber = projectNumber;
     }
 

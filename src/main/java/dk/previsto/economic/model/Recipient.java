@@ -9,9 +9,9 @@ public class Recipient {
     private String city;
     private String country;
     private String ean;
-    private String name;
+    private String name = "";
     private String publicEntryNumber;
-    private VatZoneReference vatZone;
+    private VatZoneReference vatZone = new VatZoneReference();
     private String zip;
 
     public String getAddress() {

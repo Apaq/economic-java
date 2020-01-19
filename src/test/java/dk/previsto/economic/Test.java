@@ -23,13 +23,18 @@ public class Test {
 
         Line line = new Line();
         line.setDescription("Vinduespudsning");
-        line.setQuantity(1);
-        line.setUnitNetPrice(200);
+        //line.setQuantity(1);
+        //line.setUnitNetPrice(200.0);
+        line.setTotalNetAmount(200.0);
         line.setVatRate(25.0);
         DraftInvoice draftInvoice = new DraftInvoice();
         draftInvoice.getCustomer().setCustomerNumber(customers.getContent().get(0).getCustomerNumber());
         draftInvoice.setCurrency("DKK");
         draftInvoice.getLines().add(line);
+        draftInvoice.getLayout().setLayoutNumber(19);
+        draftInvoice.getRecipient().setName("John Doe");
+        draftInvoice.getRecipient().getVatZone().setVatZoneNumber(1);
+        draftInvoice.getPaymentTerms().setPaymentTermsNumber(1);
         draftInvoice = client.getDraftInvoiceResource().save(draftInvoice);
         System.out.println(draftInvoice);
     }
