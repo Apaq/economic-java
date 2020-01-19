@@ -33,7 +33,7 @@ public class Customer extends Entity {
     private String mobilePhone;//	string			50				The customer’s mobile phone number.
     private String name; //	string			255	1			The customer name.
     private String pNumber; //	string			10	10			Extension of corporate identification number (CVR). Identifying separate production unit (p-nummer).
-    private PaymentTermsReference paymentTerms;
+    private CustomerPaymentTermsReference paymentTerms;
     private String publicEntryNumber; //	string			50				The public entry number is used for electronic invoicing, to define the account invoices will be registered on at the customer.
     private EmployeeReference salesPerson;
     private String telephoneAndFaxNumber; //	string			255				The customer’s telephone and/or fax number.
@@ -236,11 +236,11 @@ public class Customer extends Entity {
         this.pNumber = pNumber;
     }
 
-    public PaymentTermsReference getPaymentTerms() {
+    public CustomerPaymentTermsReference getPaymentTerms() {
         return paymentTerms;
     }
 
-    public void setPaymentTerms(PaymentTermsReference paymentTerms) {
+    public void setPaymentTerms(CustomerPaymentTermsReference paymentTerms) {
         this.paymentTerms = paymentTerms;
     }
 

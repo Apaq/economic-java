@@ -2,8 +2,10 @@ package dk.previsto.economic.model;
 
 import dk.previsto.economic.model.references.DepartmentalDistributionReference;
 import dk.previsto.economic.model.references.ProductInvoicesReference;
+import dk.previsto.economic.model.references.ProductUnitReference;
 import org.springframework.data.domain.Persistable;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 public class Product extends Entity {
@@ -15,14 +17,14 @@ public class Product extends Entity {
     private String description;
     //private Inventory inventory;
     //private ProductInvoicesReference invoices;
-    private LocalDate lastUpdated;
+    private Instant lastUpdated;
     private String name;
     //private ProductGroup productGroup;
     private String productNumber;
     private double recommendPrice;
     private double salesPrice;
     private String self;
-    private Unit unit;
+    private ProductUnitReference unit;
 
     @Override
     public String getId() {
@@ -74,11 +76,11 @@ public class Product extends Entity {
         this.description = description;
     }
 
-    public LocalDate getLastUpdated() {
+    public Instant getLastUpdated() {
         return lastUpdated;
     }
 
-    public void setLastUpdated(LocalDate lastUpdated) {
+    public void setLastUpdated(Instant lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
 
@@ -122,11 +124,11 @@ public class Product extends Entity {
         this.self = self;
     }
 
-    public Unit getUnit() {
+    public ProductUnitReference getUnit() {
         return unit;
     }
 
-    public void setUnit(Unit unit) {
+    public void setUnit(ProductUnitReference unit) {
         this.unit = unit;
     }
 }
