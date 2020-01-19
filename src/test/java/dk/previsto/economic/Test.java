@@ -19,7 +19,18 @@ public class Test {
         System.out.println(products);
 
         Page<DraftInvoice> draftInvoices = client.getDraftInvoiceResource().findAll(new PageRequest(0, 2));
-        System.out.println(products);
+        System.out.println(draftInvoices);
 
+        Line line = new Line();
+        line.setDescription("Vinduespudsning");
+        line.setQuantity(1);
+        line.setUnitNetPrice(200);
+        line.setVatRate(25.0);
+        DraftInvoice draftInvoice = new DraftInvoice();
+        draftInvoice.getCustomer().setCustomerNumber(customers.getContent().get(0).getCustomerNumber());
+        draftInvoice.setCurrency("DKK");
+        draftInvoice.getLines().add(line);
+        draftInvoice = client.getDraftInvoiceResource().save(draftInvoice);
+        System.out.println(draftInvoice);
     }
 }

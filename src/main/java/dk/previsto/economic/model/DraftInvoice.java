@@ -7,14 +7,15 @@ import dk.previsto.economic.model.references.ProjectReference;
 import org.springframework.data.domain.Persistable;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DraftInvoice extends Entity {
     private double costPriceInBaseCurrency;
     private String currency;
-    private CustomerReference customer;
+    private CustomerReference customer = new CustomerReference();
     private LocalDate date;
-    private Delivery delivery;
+    private Delivery delivery = new Delivery();
     private Integer draftInvoiceNumber;
     private LocalDate dueDate;
     private double exchangeRate;
@@ -23,13 +24,13 @@ public class DraftInvoice extends Entity {
     private double marginPercentage;
     private double netAmount;
     private double netAmountBaseCurrency;
-    private List<Line> lines;
-    private Notes notes;
-    private PaymentTermsReference paymentTerms;
-    private PdfReference pdf;
-    private ProjectReference project;
+    private List<Line> lines = new ArrayList<>();
+    private Notes notes = new Notes();
+    private PaymentTermsReference paymentTerms = new PaymentTermsReference();
+    private PdfReference pdf = new PdfReference();
+    private ProjectReference project = new ProjectReference();
     private Recipient recipient;
-    private InvoiceReferences references;
+    private InvoiceReferences references = new InvoiceReferences();
     private double roundingAmount;
     private String self;
     private Soap soap;
