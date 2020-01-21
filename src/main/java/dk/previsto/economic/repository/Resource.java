@@ -47,6 +47,10 @@ public abstract class Resource<T extends Entity> {
     }
 
     public Page<T> findAll(PageRequest pageRequest) {
+        return findAll(pageRequest, null);
+    }
+
+    public Page<T> findAll(PageRequest pageRequest, String filter) {
         URI url = buildUri();
         int count = -1;
         ParameterizedTypeReference<List<T>> responseType = new ParameterizedTypeReference<List<T>>() {
@@ -60,6 +64,10 @@ public abstract class Resource<T extends Entity> {
         if (pageRequest != null) {
             builder.queryParam("skipPages", pageRequest.getPageNumber());
             builder.queryParam("pageSize", pageRequest.getPageSize());
+        }
+
+        if(filter != null) {
+            builder.queryParam("filter", filter);
         }
 
         url = builder.build().encode().toUri();

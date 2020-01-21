@@ -4,6 +4,8 @@ import dk.previsto.economic.model.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
+import java.util.UUID;
+
 public class Test {
 
     public static void main(String[] args) {
@@ -35,7 +37,8 @@ public class Test {
         draftInvoice.getRecipient().setName("John Doe");
         draftInvoice.getRecipient().getVatZone().setVatZoneNumber(1);
         draftInvoice.getPaymentTerms().setPaymentTermsNumber(1);
+        draftInvoice.getReferences().setOther(UUID.randomUUID().toString());
         draftInvoice = client.getDraftInvoiceResource().save(draftInvoice);
-        System.out.println(draftInvoice);
+        System.out.println(draftInvoice.getId());
     }
 }

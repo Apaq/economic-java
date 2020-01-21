@@ -1,7 +1,6 @@
 package dk.previsto.economic.model;
 
 import dk.previsto.economic.model.references.*;
-import org.springframework.data.domain.Persistable;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
