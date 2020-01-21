@@ -10,4 +10,12 @@ public class BookedInvoiceResource extends Resource<BookedInvoice>{
         super(BookedInvoice.class, "invoices/booked", restTemplate, serviceUrl, false);
     }
 
+    public BookedInvoice save(DraftInvoice draftInvoice) {
+        return save(draftInvoice, null);
+    }
+
+    public BookedInvoice save(DraftInvoice draftInvoice, Integer bookWithNumber) {
+        // TODO: Add support for booking invoice
+        return null;
+    }
 }
