@@ -29,6 +29,6 @@ public class EconomicClientAutoConfiguration {
     public EconomicClient economicClient() {
         String displayKey = properties.getAppSecretToken() != null ? "Not NULL" : "NULL";
         LOG.info("Initializing EconomicClient. [apiKey={}]", displayKey);
-        return clientFactory.create(properties.getAppSecretToken(), properties.getAgreementGrantToken());
+        return clientFactory.create(properties.getAgreementGrantToken());
     }
 }

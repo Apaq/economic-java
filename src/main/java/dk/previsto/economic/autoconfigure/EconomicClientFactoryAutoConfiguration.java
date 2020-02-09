@@ -22,6 +22,6 @@ public class EconomicClientFactoryAutoConfiguration {
     @Bean
     public EconomicClientFactory economicClientFactory() {
         LOG.info("Initializing EconomicClientFactory. [serviceUrl={}]", properties.getServiceUrl());
-        return new EconomicClientFactory(properties.getServiceUrl());
+        return new EconomicClientFactory(properties.getServiceUrl(), properties.getAppSecretToken());
     }
 }
