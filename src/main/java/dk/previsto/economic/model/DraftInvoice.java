@@ -41,7 +41,7 @@ public class DraftInvoice extends Entity {
 
     @Override
     public void setId(String id) {
-        this.draftInvoiceNumber = Integer.parseInt(id);
+        this.draftInvoiceNumber = id == null ? null : Integer.parseInt(id);
     }
 
     public Double getCostPriceInBaseCurrency() {

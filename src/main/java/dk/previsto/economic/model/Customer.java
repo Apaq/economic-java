@@ -57,7 +57,7 @@ public class Customer extends Entity {
 
     @Override
     public void setId(String id) {
-        this.customerNumber = Integer.parseInt(id);
+        this.customerNumber = id == null ? null : Integer.parseInt(id);
     }
 
     public String getAddress() {

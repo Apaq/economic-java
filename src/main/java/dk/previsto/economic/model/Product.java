@@ -33,7 +33,7 @@ public class Product extends Entity {
 
     @Override
     public void setId(String id) {
-        this.productNumber = id;
+        this.productNumber = id == null ? null : id;
     }
 
     public String getBarCode() {

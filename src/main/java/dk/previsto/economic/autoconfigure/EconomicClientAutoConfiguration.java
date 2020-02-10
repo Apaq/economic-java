@@ -12,8 +12,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConditionalOnMissingBean(EconomicClient.class)
-@ConditionalOnProperty(value = {"economic.serviceUrl"})
 @EnableConfigurationProperties(EconomicProperties.class)
 public class EconomicClientAutoConfiguration {
 

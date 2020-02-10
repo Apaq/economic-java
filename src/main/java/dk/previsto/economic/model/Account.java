@@ -42,7 +42,7 @@ public class Account extends Entity {
 
     @Override
     public void setId(String id) {
-        this.accountNumber = Integer.parseInt(id);
+        this.accountNumber = id == null ? null : Integer.parseInt(id);
     }
 
     public int getAccountNumber() {

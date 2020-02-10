@@ -39,7 +39,7 @@ public class BookedInvoice extends Entity {
 
     @Override
     public void setId(String id) {
-        this.bookedInvoiceNumber = Integer.parseInt(id);
+        this.bookedInvoiceNumber = id == null ? null : Integer.parseInt(id);
     }
 
     public Integer getBookedInvoiceNumber() {
