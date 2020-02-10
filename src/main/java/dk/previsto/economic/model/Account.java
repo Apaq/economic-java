@@ -45,11 +45,11 @@ public class Account extends Entity {
         this.accountNumber = id == null ? null : Integer.parseInt(id);
     }
 
-    public int getAccountNumber() {
+    public Integer getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(int accountNumber) {
+    public void setAccountNumber(Integer accountNumber) {
         this.accountNumber = accountNumber;
     }
 

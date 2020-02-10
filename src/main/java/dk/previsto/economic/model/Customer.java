@@ -156,11 +156,11 @@ public class Customer extends Entity {
         this.customerGroup = customerGroup;
     }
 
-    public int getCustomerNumber() {
+    public Integer getCustomerNumber() {
         return customerNumber;
     }
 
-    public void setCustomerNumber(int customerNumber) {
+    public void setCustomerNumber(Integer customerNumber) {
         this.customerNumber = customerNumber;
     }
 
