@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ConditionalOnMissingBean(EconomicClient.class)
-@ConditionalOnProperty(value = {"economic.appSecretToken", "economic.agreementGrantToken"})
+@ConditionalOnProperty(value = {"economic.serviceUrl"})
 @EnableConfigurationProperties(EconomicProperties.class)
 public class EconomicClientAutoConfiguration {
 
