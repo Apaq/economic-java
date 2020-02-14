@@ -9,7 +9,7 @@ public class AccountReference {
     private String accountingYears;
     private double balance;
     private boolean blockDirectEntries;
-    private TransferType debitcredit = TransferType.credit;
+    private TransferType debitCredit = TransferType.credit;
     private String name;
     private String self;
 
@@ -53,12 +53,12 @@ public class AccountReference {
         this.blockDirectEntries = blockDirectEntries;
     }
 
-    public TransferType getDebitcredit() {
-        return debitcredit;
+    public TransferType getDebitCredit() {
+        return debitCredit;
     }
 
-    public void setDebitcredit(TransferType debitcredit) {
-        this.debitcredit = debitcredit;
+    public void setDebitCredit(TransferType debitCredit) {
+        this.debitCredit = debitCredit;
     }
 
     public String getName() {
