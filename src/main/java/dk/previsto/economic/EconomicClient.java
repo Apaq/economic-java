@@ -1,5 +1,7 @@
 package dk.previsto.economic;
 
+import dk.previsto.economic.model.CustomerGroup;
+import dk.previsto.economic.model.references.CustomerGroupReference;
 import dk.previsto.economic.net.RestTemplateHelper;
 import dk.previsto.economic.repository.*;
 
@@ -97,7 +99,10 @@ public class EconomicClient {
     public CustomerResource getCustomerResource() {
         return new CustomerResource(restTemplate, serviceUrl);
     }
-    
+    public CustomerGroupResource getCustomerGroupResource() {
+        return new CustomerGroupResource(restTemplate, serviceUrl);
+    }
+
     public DraftInvoiceResource getDraftInvoiceResource() {
         return new DraftInvoiceResource(restTemplate, serviceUrl);
     }
