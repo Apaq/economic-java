@@ -1,0 +1,16 @@
+{
+  "customerGroupNumber": 1,
+  "name": "Danske",
+  "account": {
+    "accountNumber": 5600,
+    "accountType": "status",
+    "balance": 352320.48,
+    "blockDirectEntries": false,
+    "debitCredit": "debit",
+    "name": "Debitorer",
+    "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+    "self": "https://restapi.e-conomic.com/accounts/5600"
+  },
+  "customers": "https://restapi.e-conomic.com/customer-groups/1/customers",
+  "self": "https://restapi.e-conomic.com/customer-groups/1"
+}

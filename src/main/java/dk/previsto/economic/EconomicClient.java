@@ -114,7 +114,10 @@ public class EconomicClient {
     public ProductResource getProductResource() {
         return new ProductResource(restTemplate, serviceUrl);
     }
-    
+    public ProductGroupResource getProductGroupResource() {
+        return new ProductGroupResource(restTemplate, serviceUrl);
+    }
+
     public AccountResource getAccountResource() {
         return new AccountResource(restTemplate, serviceUrl);
     }

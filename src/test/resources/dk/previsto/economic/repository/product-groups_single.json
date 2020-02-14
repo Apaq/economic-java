@@ -1,0 +1,7 @@
+{
+  "productGroupNumber": 2,
+  "name": "Varer u/moms",
+  "salesAccounts": "https://restapi.e-conomic.com/product-groups/2/sales-accounts",
+  "products": "https://restapi.e-conomic.com/product-groups/2/products",
+  "self": "https://restapi.e-conomic.com/product-groups/2"
+}

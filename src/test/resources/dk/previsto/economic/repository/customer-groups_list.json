@@ -1,0 +1,51 @@
+{
+  "collection": [
+    {
+      "customerGroupNumber": 1,
+      "name": "Danske",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 352320.48,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/1/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/1"
+    },
+    {
+      "customerGroupNumber": 2,
+      "name": "Udenlandske",
+      "account": {
+        "accountNumber": 5600,
+        "accountType": "status",
+        "balance": 352320.48,
+        "blockDirectEntries": false,
+        "debitCredit": "debit",
+        "name": "Debitorer",
+        "accountingYears": "https://restapi.e-conomic.com/accounts/5600/accounting-years",
+        "self": "https://restapi.e-conomic.com/accounts/5600"
+      },
+      "layout": {
+        "layoutNumber": 21,
+        "name": "Eng. std. m. bankoplys. 1.5 07.01.14",
+        "self": "https://restapi.e-conomic.com/layouts/21"
+      },
+      "customers": "https://restapi.e-conomic.com/customer-groups/2/customers",
+      "self": "https://restapi.e-conomic.com/customer-groups/2"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 20,
+    "results": 2,
+    "resultsWithoutFilter": 2,
+    "firstPage": "https://restapi.e-conomic.com/customer-groups?skippages=0&pagesize=20",
+    "lastPage": "https://restapi.e-conomic.com/customer-groups?skippages=0&pagesize=20"
+  },
+  "self": "https://restapi.e-conomic.com/customer-groups"
+}
