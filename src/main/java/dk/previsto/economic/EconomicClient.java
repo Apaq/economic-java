@@ -122,4 +122,7 @@ public class EconomicClient {
         return new AccountResource(restTemplate, serviceUrl);
     }
 
+    public LayoutResource getLayoutResource() {
+        return new LayoutResource(restTemplate, serviceUrl);
+    }
 }
