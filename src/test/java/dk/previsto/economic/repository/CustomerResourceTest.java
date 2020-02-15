@@ -61,6 +61,8 @@ public class CustomerResourceTest extends ResourceTestBase<Customer> {
         if ("1".equals(entity.getId())) {
             assertEquals(false, entity.isBarred());
             assertEquals(Instant.parse("2020-01-17T10:00:51Z"), entity.getLastUpdated());
+            assertEquals(1, (long) entity.getVatZone().getVatZoneNumber());
+            assertEquals(1, (long) entity.getCustomerGroup().getCustomerGroupNumber());
             return;
         }
 

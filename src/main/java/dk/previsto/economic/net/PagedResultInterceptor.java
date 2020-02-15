@@ -19,7 +19,8 @@ public class PagedResultInterceptor implements ClientHttpRequestInterceptor {
             "invoices/booked",
             "/products",
             "/product-groups",
-            "/customer-groups"
+            "/customer-groups",
+            "/layouts"
     };
 
     private boolean isPathForPagedResult(URI uri) {

@@ -49,13 +49,17 @@ public class AccountResourceTest extends ResourceTestBase<Account> {
 
     @Override
     protected void doCheckEntity(Account entity) {
-        if ("LpR6sv4MREW1aMlJHtASOg".equals(entity.getId())) {
-            assertEquals(7210, (int)entity.getAccountNumber());
+        if ("1000".equals(entity.getId())) {
+            assertEquals("RESULTATOPGØRELSE", entity.getName());
             return;
         }
 
+        if ("1001".equals(entity.getId())) {
+            assertEquals("Omsætning", entity.getName());
+            return;
+        }
         
-        //throw new RuntimeException("Unexpected entity [id=" + entity.getId() + "]");
+        throw new RuntimeException("Unexpected entity [id=" + entity.getId() + "]");
     }
 
 }
