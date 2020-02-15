@@ -1,6 +1,7 @@
 package dk.previsto.economic.model;
 
 import dk.previsto.economic.model.references.DepartmentalDistributionReference;
+import dk.previsto.economic.model.references.ProductGroupReference;
 import dk.previsto.economic.model.references.ProductInvoicesReference;
 import dk.previsto.economic.model.references.ProductUnitReference;
 import org.springframework.data.domain.Persistable;
@@ -19,7 +20,7 @@ public class Product extends Entity {
     //private ProductInvoicesReference invoices;
     private Instant lastUpdated;
     private String name;
-    //private ProductGroup productGroup;
+    private ProductGroupReference productGroup;
     private String productNumber;
     private double recommendPrice;
     private double salesPrice;
@@ -66,6 +67,14 @@ public class Product extends Entity {
 
     public void setDepartmentalDistribution(DepartmentalDistributionReference departmentalDistribution) {
         this.departmentalDistribution = departmentalDistribution;
+    }
+
+    public ProductGroupReference getProductGroup() {
+        return productGroup;
+    }
+
+    public void setProductGroup(ProductGroupReference productGroup) {
+        this.productGroup = productGroup;
     }
 
     public String getDescription() {
