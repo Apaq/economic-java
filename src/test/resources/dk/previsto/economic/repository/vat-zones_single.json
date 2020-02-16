@@ -1,0 +1,7 @@
+{
+  "name": "Domestic",
+  "vatZoneNumber": 1,
+  "enabledForCustomer": true,
+  "enabledForSupplier": true,
+  "self": "https://restapi.e-conomic.com/vat-zones/1"
+}

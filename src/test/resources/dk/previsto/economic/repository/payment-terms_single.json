@@ -1,0 +1,7 @@
+{
+  "paymentTermsNumber": 1,
+  "daysOfCredit": 8,
+  "name": "Netto 8 dage",
+  "paymentTermsType": "net",
+  "self": "https://restapi.e-conomic.com/payment-terms/1"
+}

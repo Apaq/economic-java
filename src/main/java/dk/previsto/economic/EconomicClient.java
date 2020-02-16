@@ -125,4 +125,12 @@ public class EconomicClient {
     public LayoutResource getLayoutResource() {
         return new LayoutResource(restTemplate, serviceUrl);
     }
+
+    public PaymentTermResource getPaymentTermResource() {
+        return new PaymentTermResource(restTemplate, serviceUrl);
+    }
+
+    public VatZoneResource getVatZoneResource() {
+        return new VatZoneResource(restTemplate, serviceUrl);
+    }
 }

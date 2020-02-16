@@ -1,0 +1,28 @@
+{
+  "collection": [
+    {
+      "name": "Domestic",
+      "vatZoneNumber": 1,
+      "enabledForCustomer": true,
+      "enabledForSupplier": true,
+      "self": "https://restapi.e-conomic.com/vat-zones/1"
+    },
+    {
+      "name": "EU",
+      "vatZoneNumber": 2,
+      "enabledForCustomer": true,
+      "enabledForSupplier": true,
+      "self": "https://restapi.e-conomic.com/vat-zones/2"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 20,
+    "results": 4,
+    "resultsWithoutFilter": 4,
+    "firstPage": "https://restapi.e-conomic.com/vat-zones?skippages=0&pagesize=20",
+    "lastPage": "https://restapi.e-conomic.com/vat-zones?skippages=0&pagesize=20"
+  },
+  "self": "https://restapi.e-conomic.com/vat-zones"
+}

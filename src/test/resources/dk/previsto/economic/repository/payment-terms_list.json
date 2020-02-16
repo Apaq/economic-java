@@ -1,0 +1,28 @@
+{
+  "collection": [
+    {
+      "paymentTermsNumber": 1,
+      "daysOfCredit": 8,
+      "name": "Netto 8 dage",
+      "paymentTermsType": "net",
+      "self": "https://restapi.e-conomic.com/payment-terms/1"
+    },
+    {
+      "paymentTermsNumber": 2,
+      "daysOfCredit": 14,
+      "name": "Netto 14 dage",
+      "paymentTermsType": "net",
+      "self": "https://restapi.e-conomic.com/payment-terms/2"
+    }
+  ],
+  "pagination": {
+    "maxPageSizeAllowed": 1000,
+    "skipPages": 0,
+    "pageSize": 20,
+    "results": 6,
+    "resultsWithoutFilter": 6,
+    "firstPage": "https://restapi.e-conomic.com/payment-terms?skippages=0&pagesize=20",
+    "lastPage": "https://restapi.e-conomic.com/payment-terms?skippages=0&pagesize=20"
+  },
+  "self": "https://restapi.e-conomic.com/payment-terms"
+}
