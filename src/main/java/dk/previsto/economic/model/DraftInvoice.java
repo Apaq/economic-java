@@ -29,7 +29,6 @@ public class DraftInvoice extends Entity {
     private InvoiceReferences references = new InvoiceReferences();
     private Double roundingAmount;
     private String self;
-    private Soap soap;
     private Templates templates;
     private Double vatAmount;
     private LayoutReference layout = new LayoutReference();
@@ -210,14 +209,6 @@ public class DraftInvoice extends Entity {
 
     public void setSelf(String self) {
         this.self = self;
-    }
-
-    public Soap getSoap() {
-        return soap;
-    }
-
-    public void setSoap(Soap soap) {
-        this.soap = soap;
     }
 
     public Templates getTemplates() {
