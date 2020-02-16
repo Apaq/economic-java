@@ -1,6 +1,7 @@
 package dk.previsto.economic.repository;
 
 import dk.previsto.economic.exception.RequestException;
+import dk.previsto.economic.model.BookInvoiceRequest;
 import dk.previsto.economic.model.BookedInvoice;
 import dk.previsto.economic.model.DraftInvoice;
 import dk.previsto.economic.model.references.DraftInvoiceReference;
@@ -24,10 +25,13 @@ public class BookedInvoiceResource extends Resource<BookedInvoice>{
         URI uri = buildUri();
         BookedInvoice persistedEntity;
 
+        BookInvoiceRequest bookInvoiceRequest = new BookInvoiceRequest();
         DraftInvoiceReference ref = new DraftInvoiceReference();
         ref.setDraftInvoiceNumber(draftInvoice.getDraftInvoiceNumber());
         ref.setSelf(draftInvoice.getSelf());
-        ResponseEntity<BookedInvoice> response = restTemplate.postForEntity(uri, ref, BookedInvoice.class);
+        bookInvoiceRequest.setDraftInvoice(ref);
+
+        ResponseEntity<BookedInvoice> response = restTemplate.postForEntity(uri, bookInvoiceRequest, BookedInvoice.class);
         persistedEntity = response.getBody();
 
         return persistedEntity;
