@@ -1,8 +1,14 @@
 package dk.previsto.economic.repository;
 
+import dk.previsto.economic.exception.RequestException;
 import dk.previsto.economic.model.BookedInvoice;
 import dk.previsto.economic.model.DraftInvoice;
+import dk.previsto.economic.model.references.DraftInvoiceReference;
+import org.springframework.data.domain.Persistable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+
+import java.net.URI;
 
 public class BookedInvoiceResource extends Resource<BookedInvoice>{
 
@@ -15,7 +21,15 @@ public class BookedInvoiceResource extends Resource<BookedInvoice>{
     }
 
     public BookedInvoice save(DraftInvoice draftInvoice, Integer bookWithNumber) {
-        // TODO: Add support for booking invoice
-        return null;
+        URI uri = buildUri();
+        BookedInvoice persistedEntity;
+
+        DraftInvoiceReference ref = new DraftInvoiceReference();
+        ref.setDraftInvoiceNumber(draftInvoice.getDraftInvoiceNumber());
+        ref.setSelf(draftInvoice.getSelf());
+        ResponseEntity<BookedInvoice> response = restTemplate.postForEntity(uri, ref, BookedInvoice.class);
+        persistedEntity = response.getBody();
+
+        return persistedEntity;
     }
 }
