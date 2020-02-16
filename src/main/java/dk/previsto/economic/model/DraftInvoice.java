@@ -29,7 +29,7 @@ public class DraftInvoice extends Entity {
     private InvoiceReferences references = new InvoiceReferences();
     private Double roundingAmount;
     private String self;
-    private Templates templates;
+    private Templates templates = new Templates();
     private Double vatAmount;
     private LayoutReference layout = new LayoutReference();
 
