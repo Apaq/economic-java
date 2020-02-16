@@ -29,7 +29,6 @@ public class DraftInvoice extends Entity {
     private InvoiceReferences references = new InvoiceReferences();
     private Double roundingAmount;
     private String self;
-    private Templates templates = new Templates();
     private Double vatAmount;
     private LayoutReference layout = new LayoutReference();
 
@@ -209,14 +208,6 @@ public class DraftInvoice extends Entity {
 
     public void setSelf(String self) {
         this.self = self;
-    }
-
-    public Templates getTemplates() {
-        return templates;
-    }
-
-    public void setTemplates(Templates templates) {
-        this.templates = templates;
     }
 
     public Double getVatAmount() {
