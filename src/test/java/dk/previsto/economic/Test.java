@@ -14,13 +14,13 @@ public class Test {
         EconomicClient client = new EconomicClient("demo", "demo", "https://restapi.e-conomic.com", true   );
 
 
-        Page<Customer> customers = client.getCustomerResource().findAll(new PageRequest(0, 2));
+        Page<Customer> customers = client.getCustomerResource().findAll(PageRequest.of(0, 2));
         System.out.println(customers);
 
-        Page<Product> products = client.getProductResource().findAll(new PageRequest(0, 2));
+        Page<Product> products = client.getProductResource().findAll(PageRequest.of(0, 2));
         System.out.println(products);
 
-        Page<DraftInvoice> draftInvoices = client.getDraftInvoiceResource().findAll(new PageRequest(0, 2));
+        Page<DraftInvoice> draftInvoices = client.getDraftInvoiceResource().findAll(PageRequest.of(0, 2));
         System.out.println(draftInvoices);
 
         Line line = new Line();
