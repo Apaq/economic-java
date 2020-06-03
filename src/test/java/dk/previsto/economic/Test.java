@@ -39,6 +39,18 @@ public class Test {
         draftInvoice.getPaymentTerms().setPaymentTermsNumber(1);
         draftInvoice.getReferences().setOther(UUID.randomUUID().toString());
         draftInvoice = client.getDraftInvoiceResource().save(draftInvoice);
+
+        draftInvoice = client.getDraftInvoiceResource().get(draftInvoice.getId());
+        line = new Line();
+        line.setDescription("Vinduespudsning");
+        //line.setQuantity(1);
+        //line.setUnitNetPrice(200.0);
+        line.setTotalNetAmount(200.0);
+        line.setVatRate(25.0);
+        draftInvoice.getLines().add(line);
+        draftInvoice = client.getDraftInvoiceResource().save(draftInvoice);
+        draftInvoice = client.getDraftInvoiceResource().get(draftInvoice.getId());
+
         System.out.println(draftInvoice.getId());
     }
 }

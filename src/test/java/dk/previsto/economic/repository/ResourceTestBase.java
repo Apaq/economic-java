@@ -6,6 +6,7 @@ import java.util.List;
 
 import dk.previsto.economic.model.Entity;
 import dk.previsto.economic.net.RestTemplateHelper;
+import org.hamcrest.text.MatchesPattern;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -14,6 +15,7 @@ import org.springframework.data.domain.Persistable;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.test.web.client.ExpectedCount;
 import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.test.web.client.RequestMatcher;
 import org.springframework.test.web.client.ResponseActions;
@@ -59,8 +61,13 @@ public abstract class ResourceTestBase<T extends Entity> {
     public void testFindAll() {
         System.out.println("findAll");
         String queryParams = generateExpectedGetQueryParams();
-        mockServer.expect(requestTo(resource.serviceUrl + "/" + resourceName + queryParams)).andExpect(method(HttpMethod.GET))
+        mockServer.expect(ExpectedCount.once(), requestTo(resource.serviceUrl + "/" + resourceName + queryParams)).andExpect(method(HttpMethod.GET))
                 .andRespond(generateExpectedFindAllResponse());
+
+        if(resource.isQueryLacksFields()) {
+            mockServer.expect(ExpectedCount.manyTimes(), requestTo(MatchesPattern.matchesPattern(resource.serviceUrl + "/" + resourceName + "/[0-9a-zA-Z]*"))).andExpect(method(HttpMethod.GET))
+                    .andRespond(generateExpectedGetResponse());
+        }
 
         List<T> entities = resource.findAll();
         for(T entity : entities) {

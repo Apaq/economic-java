@@ -42,6 +42,10 @@ public abstract class Resource<T extends Entity> {
         this.queryLacksFields = queryLacksFields;
     }
 
+    public boolean isQueryLacksFields() {
+        return queryLacksFields;
+    }
+
     public List<T> findAll() {
         return findAll(PageRequest.of(0, 1000)).getContent();
     }

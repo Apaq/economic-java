@@ -10,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.client.response.DefaultResponseCreator;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
 import org.springframework.test.web.client.RequestMatcher;
@@ -59,19 +60,19 @@ public class DraftInvoiceResourceTest extends ResourceTestBase<DraftInvoice> {
     protected void doCheckEntity(DraftInvoice entity) {
         if ("35183".equals(entity.getId())) {
             assertEquals(LocalDate.parse("2019-02-11"), entity.getDate());
-            //assertEquals(InvoiceState.Approved, entity.getState());
+            assertFalse(entity.getLines().isEmpty());
             return;
         }
 
         if ("35199".equals(entity.getId())) {
             assertEquals(LocalDate.parse("2019-02-12"), entity.getDate());
-            //assertEquals(InvoiceState.Draft, entity.getState());
+            assertFalse(entity.getLines().isEmpty());
             return;
         }
 
         if ("35200".equals(entity.getId())) {
             assertEquals(LocalDate.parse("2019-02-12"), entity.getDate());
-            //assertEquals(InvoiceState.Approved, entity.getState());
+            assertFalse(entity.getLines().isEmpty());
             return;
         }
         throw new RuntimeException("Unexpected contact entity [id=" + entity.getId() + "]");

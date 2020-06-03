@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
@@ -58,13 +59,13 @@ public class BookedInvoiceResourceTest extends ResourceTestBase<BookedInvoice> {
     protected void doCheckEntity(BookedInvoice entity) {
         if ("10002".equals(entity.getId())) {
             assertEquals(LocalDate.parse("2011-10-31"), entity.getDate());
-            //assertEquals(InvoiceState.Approved, entity.getState());
+            assertFalse(entity.getLines().isEmpty());
             return;
         }
 
         if ("10001".equals(entity.getId())) {
             assertEquals(LocalDate.parse("2011-10-10"), entity.getDate());
-            //assertEquals(InvoiceState.Draft, entity.getState());
+            assertFalse(entity.getLines().isEmpty());
             return;
         }
 

@@ -9,6 +9,46 @@
     "bookingInstructions": "https://restapi.e-conomic.com/invoices/drafts/35183/templates/booking-instructions",
     "self": "https://restapi.e-conomic.com/invoices/drafts/35183/templates"
   },
+  "lines": [
+    {
+      "lineNumber": 1,
+      "sortKey": 1,
+      "description": "Husleje",
+      "unit": {
+        "unitNumber": 1,
+        "name": "stk.",
+        "products": "https://restapi.e-conomic.com/units/1/products",
+        "self": "https://restapi.e-conomic.com/units/1"
+      },
+      "product": {
+        "productNumber": "1",
+        "self": "https://restapi.e-conomic.com/products/1"
+      },
+      "quantity": 1,
+      "unitNetPrice": 3175,
+      "discountPercentage": 0,
+      "unitCostPrice": 0,
+      "totalNetAmount": 3175,
+      "marginInBaseCurrency": 3175,
+      "marginPercentage": 100
+    },
+    {
+      "lineNumber": 2,
+      "sortKey": 2,
+      "description": "Vand og varme",
+      "product": {
+        "productNumber": "3",
+        "self": "https://restapi.e-conomic.com/products/3"
+      },
+      "quantity": 1,
+      "unitNetPrice": 494,
+      "discountPercentage": 0,
+      "unitCostPrice": 0,
+      "totalNetAmount": 494,
+      "marginInBaseCurrency": 494,
+      "marginPercentage": 100
+    }
+  ],
   "date": "2019-02-11",
   "currency": "DKK",
   "exchangeRate": 100.000000,
