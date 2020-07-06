@@ -6,12 +6,6 @@
     <version>1.0.21-SNAPSHOT</version>
     <packaging>jar</packaging>
     
-    <parent>
-        <groupId>dk.apaq</groupId>
-        <artifactId>parent</artifactId>
-        <version>1.3.0</version>
-    </parent>
-
     <scm>
         <connection>scm:git:https://github.com/Previsto/economic-java.git</connection>
         <developerConnection>scm:git:git@github.com:Previsto/economic-java.git</developerConnection>
@@ -126,20 +120,6 @@
         </plugins>
     </reporting>
 
-    
-    <distributionManagement>
-        <repository>
-            <id>aws-release</id>
-            <name>Apaq Release Repository</name>
-            <url>s3://apaq-repository/release</url>
-        </repository>
-        <snapshotRepository>
-            <id>aws-snapshot</id>
-            <name>Apaq Snapshot Repository</name>
-            <url>s3://apaq-repository/snapshot</url>
-        </snapshotRepository>
-    </distributionManagement>
-    
     <build>
         <extensions>
             <extension>
