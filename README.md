@@ -18,9 +18,9 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>com.previsto</groupId>
-  <artifactId>economic.java</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <groupId>dk.apaq</groupId>
+  <artifactId>economic-java</artifactId>
+  <version> <!-- Latest Version --> </version>
 </dependency>
 ```
 
@@ -41,10 +41,10 @@ economic:
 EconomicExample.java
 
 ```java
-import com.previsto.economic.model.Customer;
+import dk.apaq.economic.model.Customer;
 
 @SpringBootApplication
-public class BillyExample {
+public class Example {
 
     @AutoWired
     private EconomicClient client;
@@ -67,7 +67,6 @@ public class BillyExample {
 ```
 
 
-See [Test.java](https://github.com/Previsto/economic-java/blob/master/src/test/java/com/previsto/economic/Test.java) for more examples.
 
 Testing
 =======
@@ -77,30 +76,4 @@ You must have Maven installed. To run the tests:
     mvn test
 
 
-Deploy Artifact
-=======
-Artifacts are deployed to a secure S3 repository. 
-In order to be able to deploy to it, the correct credentials are required in settings.xml. 
-You set it up like this:
-
-```
-<settings>
-  ...
-  <servers>
-    ...
-    <server>
-      <id>aws-release</id>
-      <username>[ACCESS_KEY]</username>
-      <password>[SECRET_KEY]</password>
-    </server>
-    <server>
-      <id>aws-snapshot</id>
-      <username>[ACCESS_KEY]</username>
-      <password>[SECRET_KEY]</password>
-    </server>
-    ...
-  </servers>
-  ...
-</settings>
-```
 
