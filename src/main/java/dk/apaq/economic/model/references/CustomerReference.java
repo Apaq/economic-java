@@ -8,6 +8,10 @@ public class CustomerReference {
         return customerNumber;
     }
 
+    /**
+     * The customer number is a positive unique numerical identifier with a maximum of 9 digits.
+     * @param customerNumber
+     */
     public void setCustomerNumber(int customerNumber) {
         this.customerNumber = customerNumber;
     }

@@ -37,6 +37,10 @@ public class Account extends Entity {
         return accountNumber == null ? null : Integer.toString(accountNumber);
     }
 
+    /**
+     * The account’s id. Same as account number.
+     * @param id
+     */
     @Override
     public void setId(String id) {
         this.accountNumber = id == null ? null : Integer.parseInt(id);
@@ -54,6 +58,11 @@ public class Account extends Entity {
         return accountType;
     }
 
+    /**
+     * The type of account in the chart of accounts. ProfitAndLoss, Status, TotalFrom, Heading, HeadingStart,
+     * SumInterval, SumAlpha
+     * @param accountType
+     */
     public void setAccountType(AccountType accountType) {
         this.accountType = accountType;
     }
@@ -70,6 +79,10 @@ public class Account extends Entity {
         return balance;
     }
 
+    /**
+     * The current balanace of the account.
+     * @param balance
+     */
     public void setBalance(double balance) {
         this.balance = balance;
     }
@@ -78,6 +91,10 @@ public class Account extends Entity {
         return barred;
     }
 
+    /**
+     * Shows if the account is barred from being used.
+     * @param barred
+     */
     public void setBarred(boolean barred) {
         this.barred = barred;
     }
@@ -86,6 +103,10 @@ public class Account extends Entity {
         return blockDirectEntries;
     }
 
+    /**
+     * Determines if the account can be manually updated with entries.
+     * @param blockDirectEntries
+     */
     public void setBlockDirectEntries(boolean blockDirectEntries) {
         this.blockDirectEntries = blockDirectEntries;
     }
@@ -94,6 +115,10 @@ public class Account extends Entity {
         return debitCredit;
     }
 
+    /**
+     * Describes the default update type of the account. Debit or Credit.
+     * @param debitCredit
+     */
     public void setDebitCredit(RecordType debitCredit) {
         this.debitCredit = debitCredit;
     }
@@ -102,6 +127,10 @@ public class Account extends Entity {
         return draftBalance;
     }
 
+    /**
+     * The current balance of the account including draft (not yet booked) entries.
+     * @param draftBalance
+     */
     public void setDraftBalance(double draftBalance) {
         this.draftBalance = draftBalance;
     }
@@ -110,6 +139,10 @@ public class Account extends Entity {
         return name;
     }
 
+    /**
+     * The name of the account.
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }

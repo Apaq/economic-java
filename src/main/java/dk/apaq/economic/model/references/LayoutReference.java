@@ -26,6 +26,10 @@ public class LayoutReference {
         return layoutNumber;
     }
 
+    /**
+     * The unique identifier of the layout.
+     * @param layoutNumber
+     */
     public void setLayoutNumber(Integer layoutNumber) {
         this.layoutNumber = layoutNumber;
     }

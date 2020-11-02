@@ -13,6 +13,10 @@ public class InvoiceReferences {
         return customerContact;
     }
 
+    /**
+     * The customer contact is a reference to the employee at the customer to contact regarding the invoice.
+     * @param customerContact
+     */
     public void setCustomerContact(CustomerContactReference customerContact) {
         this.customerContact = customerContact;
     }
@@ -21,6 +25,10 @@ public class InvoiceReferences {
         return other;
     }
 
+    /**
+     * A text field that can be used to save any custom reference on the invoice.
+     * @param other
+     */
     public void setOther(String other) {
         this.other = other;
     }
@@ -29,6 +37,11 @@ public class InvoiceReferences {
         return salesPerson;
     }
 
+    /**
+     * The sales person is a reference to the employee who sold the goods on the invoice. This is also the person who is
+     * credited with this sale in reports.
+     * @param salesPerson
+     */
     public void setSalesPerson(EmployeeReference salesPerson) {
         this.salesPerson = salesPerson;
     }
@@ -37,6 +50,10 @@ public class InvoiceReferences {
         return vendorReference;
     }
 
+    /**
+     * A reference to any second employee involved in the sale.
+     * @param vendorReference
+     */
     public void setVendorReference(EmployeeReference vendorReference) {
         this.vendorReference = vendorReference;
     }

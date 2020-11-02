@@ -36,6 +36,10 @@ public class Line {
         this.marginPercentage = marginPercentage;
     }
 
+    /**
+     * The price of 1 unit of the goods or services on the invoice line in the invoice currency.
+     * @return
+     */
     public Double getUnitNetPrice() {
         return unitNetPrice;
     }
@@ -48,6 +52,10 @@ public class Line {
         return unitCostPrice;
     }
 
+    /**
+     * The cost price of 1 unit of the goods or services in the invoice currency.
+     * @param unitCostPrice
+     */
     public void setUnitCostPrice(Double unitCostPrice) {
         this.unitCostPrice = unitCostPrice;
     }
@@ -56,6 +64,11 @@ public class Line {
         return vatAmount;
     }
 
+    /**
+     * The total amount of VAT on the invoice line in the invoice currency. This will have the same sign as total net
+     * amount
+     * @param vatAmount
+     */
     public void setVatAmount(Double vatAmount) {
         this.vatAmount = vatAmount;
     }
@@ -64,6 +77,10 @@ public class Line {
         return vatRate;
     }
 
+    /**
+     * The VAT rate in % used to calculate the vat amount on this line.
+     * @param vatRate
+     */
     public void setVatRate(Double vatRate) {
         this.vatRate = vatRate;
     }
@@ -72,6 +89,10 @@ public class Line {
         return deliveryDate;
     }
 
+    /**
+     * Invoice delivery date.
+     * @param deliveryDate
+     */
     public void setDeliveryDate(LocalDate deliveryDate) {
         this.deliveryDate = deliveryDate;
     }
@@ -80,6 +101,11 @@ public class Line {
         return departmentalDistribution;
     }
 
+    /**
+     * A departmental distribution defines which departments this invoice line is distributed between. This requires
+     * the departments module to be enabled.
+     * @param departmentalDistribution
+     */
     public void setDepartmentalDistribution(DepartmentalDistributionReference departmentalDistribution) {
         this.departmentalDistribution = departmentalDistribution;
     }
@@ -88,6 +114,10 @@ public class Line {
         return description;
     }
 
+    /**
+     * A description of the product or service sold.
+     * @param description
+     */
     public void setDescription(String description) {
         this.description = description;
     }
@@ -96,6 +126,10 @@ public class Line {
         return discountPercentage;
     }
 
+    /**
+     * A line discount expressed as a percentage.
+     * @param discountPercentage
+     */
     public void setDiscountPercentage(Double discountPercentage) {
         this.discountPercentage = discountPercentage;
     }
@@ -105,6 +139,10 @@ public class Line {
         return product;
     }
 
+    /**
+     * The product or service offered on the invoice line.
+     * @param product
+     */
     public void setProduct(ProductReference product) {
         this.product = product;
     }
@@ -113,6 +151,10 @@ public class Line {
         return quantity;
     }
 
+    /**
+     * The number of units of goods on the invoice line.
+     * @param quantity
+     */
     public void setQuantity(Double quantity) {
         this.quantity = quantity;
     }
@@ -121,6 +163,11 @@ public class Line {
         return totalNetAmount;
     }
 
+    /**
+     * The total invoice line amount in the invoice currency before all taxes and discounts have been applied. For a
+     * credit note this amount will be negative.
+     * @param totalNetAmount
+     */
     public void setTotalNetAmount(Double totalNetAmount) {
         this.totalNetAmount = totalNetAmount;
     }

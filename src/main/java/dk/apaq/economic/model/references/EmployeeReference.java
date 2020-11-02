@@ -16,6 +16,10 @@ public class EmployeeReference {
         return employeeNumber;
     }
 
+    /**
+     * Unique identifier of the employee.
+     * @param employeeNumber
+     */
     public void setEmployeeNumber(int employeeNumber) {
         this.employeeNumber = employeeNumber;
     }

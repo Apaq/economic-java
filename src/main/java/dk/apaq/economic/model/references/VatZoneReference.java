@@ -16,6 +16,10 @@ public class VatZoneReference {
         return vatZoneNumber;
     }
 
+    /**
+     * Unique identifier of the vat zone.
+     * @param vatZoneNumber
+     */
     public void setVatZoneNumber(Integer vatZoneNumber) {
         this.vatZoneNumber = vatZoneNumber;
     }

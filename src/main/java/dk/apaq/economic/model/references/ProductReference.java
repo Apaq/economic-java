@@ -8,6 +8,10 @@ public class ProductReference {
         return productNumber;
     }
 
+    /**
+     * The unique product number. This can be a stock keeping unit identifier (SKU).
+     * @param productNumber
+     */
     public void setProductNumber(String productNumber) {
         this.productNumber = productNumber;
     }

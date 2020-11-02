@@ -63,6 +63,10 @@ public class Customer extends Entity {
         return address;
     }
 
+    /**
+     * Address for the customer including street and number.
+     * @param address
+     */
     public void setAddress(String address) {
         this.address = address;
     }
@@ -71,6 +75,10 @@ public class Customer extends Entity {
         return attention;
     }
 
+    /**
+     * The customer’s person of attention.
+     * @param atttention
+     */
     public void setAttention(CustomerContactReference atttention) {
         this.attention = atttention;
     }
@@ -79,6 +87,10 @@ public class Customer extends Entity {
         return balance;
     }
 
+    /**
+     * The outstanding amount for this customer.
+     * @param balance
+     */
     public void setBalance(double balance) {
         this.balance = balance;
     }
@@ -87,6 +99,10 @@ public class Customer extends Entity {
         return barred;
     }
 
+    /**
+     * Boolean indication of whether the customer is barred from invoicing.
+     * @param barred
+     */
     public void setBarred(boolean barred) {
         this.barred = barred;
     }
@@ -95,6 +111,10 @@ public class Customer extends Entity {
         return city;
     }
 
+    /**
+     * The customer’s city.
+     * @param city
+     */
     public void setCity(String city) {
         this.city = city;
     }
@@ -103,6 +123,10 @@ public class Customer extends Entity {
         return contacts;
     }
 
+    /**
+     * A unique link reference to the customer contacts items.
+     * @param contacts
+     */
     public void setContacts(String contacts) {
         this.contacts = contacts;
     }
@@ -111,6 +135,10 @@ public class Customer extends Entity {
         return corporateIdentificationNumber;
     }
 
+    /**
+     * Corporate Identification Number. For example CVR in Denmark.
+     * @param corporateIdentificationNumber
+     */
     public void setCorporateIdentificationNumber(String corporateIdentificationNumber) {
         this.corporateIdentificationNumber = corporateIdentificationNumber;
     }
@@ -119,6 +147,10 @@ public class Customer extends Entity {
         return country;
     }
 
+    /**
+     * The customer’s country.
+     * @param country
+     */
     public void setCountry(String country) {
         this.country = country;
     }
@@ -127,6 +159,11 @@ public class Customer extends Entity {
         return creditLimit;
     }
 
+    /**
+     * A maximum credit for this customer. Once the maximum is reached or passed in connection with an
+     * order/quotation/invoice for this customer you see a warning in e-conomic.
+     * @param creditLimit
+     */
     public void setCreditLimit(double creditLimit) {
         this.creditLimit = creditLimit;
     }
@@ -135,6 +172,10 @@ public class Customer extends Entity {
         return currency;
     }
 
+    /**
+     * Default payment currency.
+     * @param currency
+     */
     public void setCurrency(String currency) {
         this.currency = currency;
     }
@@ -143,6 +184,10 @@ public class Customer extends Entity {
         return customerContact;
     }
 
+    /**
+     * Reference to main contact employee at customer.
+     * @param customerContact
+     */
     public void setCustomerContact(CustomerContactReference customerContact) {
         this.customerContact = customerContact;
     }
@@ -151,6 +196,10 @@ public class Customer extends Entity {
         return customerGroup;
     }
 
+    /**
+     * 	Reference to the customer group this customer is attached to.
+     * @param customerGroup
+     */
     public void setCustomerGroup(CustomerGroupReference customerGroup) {
         this.customerGroup = customerGroup;
     }
@@ -159,6 +208,10 @@ public class Customer extends Entity {
         return customerNumber;
     }
 
+    /**
+     * The customer number is a positive unique numerical identifier with a maximum of 9 digits.
+     * @param customerNumber
+     */
     public void setCustomerNumber(Integer customerNumber) {
         this.customerNumber = customerNumber;
     }
@@ -167,6 +220,10 @@ public class Customer extends Entity {
         return defaultDeliveryLocation;
     }
 
+    /**
+     * Customers default delivery location.
+     * @param defaultDeliveryLocation
+     */
     public void setDefaultDeliveryLocation(DeliveryLocationReference defaultDeliveryLocation) {
         this.defaultDeliveryLocation = defaultDeliveryLocation;
     }
@@ -175,6 +232,10 @@ public class Customer extends Entity {
         return deliveryLocations;
     }
 
+    /**
+     * A unique link reference to the customer delivery locations items.
+     * @param deliveryLocations
+     */
     public void setDeliveryLocations(String deliveryLocations) {
         this.deliveryLocations = deliveryLocations;
     }
@@ -183,6 +244,10 @@ public class Customer extends Entity {
         return ean;
     }
 
+    /**
+     * European Article Number. EAN is used for invoicing the Danish public sector.
+     * @param ean
+     */
     public void setEan(String ean) {
         this.ean = ean;
     }
@@ -191,6 +256,12 @@ public class Customer extends Entity {
         return email;
     }
 
+    /**
+     * Customer e-mail address where e-conomic invoices should be emailed. Note: you can specify multiple email
+     * addresses in this field, separated by a space. If you need to send a copy of the invoice or write to other
+     * e-mail addresses, you can also create one or more customer contacts.
+     * @param email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
@@ -199,6 +270,10 @@ public class Customer extends Entity {
         return lastUpdated;
     }
 
+    /**
+     * The date this customer was last updated.
+     * @param lastUpdated
+     */
     public void setLastUpdated(Instant lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
@@ -207,6 +282,10 @@ public class Customer extends Entity {
         return layout;
     }
 
+    /**
+     * Layout to be applied for invoices and other documents for this customer.
+     * @param layout
+     */
     public void setLayout(LayoutReference layout) {
         this.layout = layout;
     }
@@ -215,6 +294,10 @@ public class Customer extends Entity {
         return mobilePhone;
     }
 
+    /**
+     * The customer’s mobile phone number.
+     * @param mobilePhone
+     */
     public void setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
     }
@@ -223,6 +306,10 @@ public class Customer extends Entity {
         return name;
     }
 
+    /**
+     * 	The customer name.
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
@@ -231,6 +318,10 @@ public class Customer extends Entity {
         return pNumber;
     }
 
+    /**
+     * Extension of corporate identification number (CVR). Identifying separate production unit (p-nummer).
+     * @param pNumber
+     */
     public void setpNumber(String pNumber) {
         this.pNumber = pNumber;
     }
@@ -239,6 +330,10 @@ public class Customer extends Entity {
         return paymentTerms;
     }
 
+    /**
+     * The default payment terms for the customer.
+     * @param paymentTerms
+     */
     public void setPaymentTerms(CustomerPaymentTermsReference paymentTerms) {
         this.paymentTerms = paymentTerms;
     }
@@ -247,6 +342,11 @@ public class Customer extends Entity {
         return publicEntryNumber;
     }
 
+    /**
+     * The public entry number is used for electronic invoicing, to define the account invoices will be registered on
+     * at the customer.
+     * @param publicEntryNumber
+     */
     public void setPublicEntryNumber(String publicEntryNumber) {
         this.publicEntryNumber = publicEntryNumber;
     }
@@ -255,6 +355,10 @@ public class Customer extends Entity {
         return salesPerson;
     }
 
+    /**
+     * Reference to the employee responsible for contact with this customer.
+     * @param salesPerson
+     */
     public void setSalesPerson(EmployeeReference salesPerson) {
         this.salesPerson = salesPerson;
     }
@@ -263,6 +367,10 @@ public class Customer extends Entity {
         return telephoneAndFaxNumber;
     }
 
+    /**
+     * The customer’s telephone and/or fax number.
+     * @param telephoneAndFaxNumber
+     */
     public void setTelephoneAndFaxNumber(String telephoneAndFaxNumber) {
         this.telephoneAndFaxNumber = telephoneAndFaxNumber;
     }
@@ -271,6 +379,12 @@ public class Customer extends Entity {
         return vatNumber;
     }
 
+    /**
+     * The customer’s value added tax identification number. This field is only available to agreements in Sweden, UK,
+     * Germany, Poland and Finland. Not to be mistaken for the danish CVR number, which is defined on the
+     * corporateIdentificationNumber property.
+     * @param vatNumber
+     */
     public void setVatNumber(String vatNumber) {
         this.vatNumber = vatNumber;
     }
@@ -279,6 +393,10 @@ public class Customer extends Entity {
         return vatZone;
     }
 
+    /**
+     * 	Indicates in which VAT-zone the customer is located (e.g.: domestically, in Europe or elsewhere abroad).
+     * @param vatZone
+     */
     public void setVatZone(VatZoneReference vatZone) {
         this.vatZone = vatZone;
     }
@@ -287,6 +405,10 @@ public class Customer extends Entity {
         return website;
     }
 
+    /**
+     * Customer website, if applicable.
+     * @param website
+     */
     public void setWebsite(String website) {
         this.website = website;
     }
@@ -295,6 +417,10 @@ public class Customer extends Entity {
         return zip;
     }
 
+    /**
+     * 	The customer’s postcode.
+     * @param zip
+     */
     public void setZip(String zip) {
         this.zip = zip;
     }

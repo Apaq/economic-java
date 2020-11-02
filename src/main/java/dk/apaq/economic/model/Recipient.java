@@ -18,6 +18,10 @@ public class Recipient {
         return address;
     }
 
+    /**
+     * The street address of the actual recipient.
+     * @param address
+     */
     public void setAddress(String address) {
         this.address = address;
     }
@@ -26,6 +30,10 @@ public class Recipient {
         return attention;
     }
 
+    /**
+     * The person to whom this invoice is addressed.
+     * @param attention
+     */
     public void setAttention(CustomerContactReference attention) {
         this.attention = attention;
     }
@@ -34,6 +42,10 @@ public class Recipient {
         return city;
     }
 
+    /**
+     * The city of the actual recipient.
+     * @param city
+     */
     public void setCity(String city) {
         this.city = city;
     }
@@ -42,6 +54,10 @@ public class Recipient {
         return country;
     }
 
+    /**
+     * The country of the actual recipient.
+     * @param country
+     */
     public void setCountry(String country) {
         this.country = country;
     }
@@ -50,6 +66,10 @@ public class Recipient {
         return ean;
     }
 
+    /**
+     * The 'European Article Number’ of the actual recipient.
+     * @param ean
+     */
     public void setEan(String ean) {
         this.ean = ean;
     }
@@ -58,6 +78,10 @@ public class Recipient {
         return name;
     }
 
+    /**
+     * 	The name of the actual recipient.
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
@@ -66,6 +90,10 @@ public class Recipient {
         return publicEntryNumber;
     }
 
+    /**
+     * The public entry number of the actual recipient.
+     * @param publicEntryNumber
+     */
     public void setPublicEntryNumber(String publicEntryNumber) {
         this.publicEntryNumber = publicEntryNumber;
     }
@@ -74,6 +102,10 @@ public class Recipient {
         return vatZone;
     }
 
+    /**
+     * Recipient vat zone.
+     * @param vatZone
+     */
     public void setVatZone(VatZoneReference vatZone) {
         this.vatZone = vatZone;
     }
@@ -82,6 +114,10 @@ public class Recipient {
         return zip;
     }
 
+    /**
+     * The zip code of the actual recipient.
+     * @param zip
+     */
     public void setZip(String zip) {
         this.zip = zip;
     }

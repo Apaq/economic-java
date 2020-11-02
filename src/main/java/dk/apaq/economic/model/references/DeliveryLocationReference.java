@@ -8,6 +8,10 @@ public class DeliveryLocationReference {
         return deliveryLocationNumber;
     }
 
+    /**
+     * The unique identifier of the delivery location.
+     * @param deliveryLocationNumber
+     */
     public void setDeliveryLocationNumber(int deliveryLocationNumber) {
         this.deliveryLocationNumber = deliveryLocationNumber;
     }

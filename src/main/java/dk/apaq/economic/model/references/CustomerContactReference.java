@@ -8,6 +8,10 @@ public class CustomerContactReference {
         return customerContactNumber;
     }
 
+    /**
+     * Unique identifier of the customer employee.
+     * @param customerContactNumber
+     */
     public void setCustomerContactNumber(int customerContactNumber) {
         this.customerContactNumber = customerContactNumber;
     }

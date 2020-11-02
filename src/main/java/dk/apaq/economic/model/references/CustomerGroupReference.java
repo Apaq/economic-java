@@ -16,6 +16,10 @@ public class CustomerGroupReference {
         return customerGroupNumber;
     }
 
+    /**
+     * The unique identifier of the customer group.
+     * @param customerGroupNumber
+     */
     public void setCustomerGroupNumber(int customerGroupNumber) {
         this.customerGroupNumber = customerGroupNumber;
     }

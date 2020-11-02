@@ -13,6 +13,10 @@ public class PaymentTermsReference {
         return daysOfCredit;
     }
 
+    /**
+     * The number of days of credit on the invoice. This field is only valid if terms of payment is not of type ‘duedate
+     * @param daysOfCredit
+     */
     public void setDaysOfCredit(int daysOfCredit) {
         this.daysOfCredit = daysOfCredit;
     }
@@ -21,6 +25,10 @@ public class PaymentTermsReference {
         return name;
     }
 
+    /**
+     * The name of the payment terms.
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
@@ -29,6 +37,10 @@ public class PaymentTermsReference {
         return paymentTermsNumber;
     }
 
+    /**
+     * A unique identifier of the payment term.
+     * @param paymentTermsNumber
+     */
     public void setPaymentTermsNumber(Integer paymentTermsNumber) {
         this.paymentTermsNumber = paymentTermsNumber;
     }
@@ -37,6 +49,10 @@ public class PaymentTermsReference {
         return paymentTermsType;
     }
 
+    /**
+     * The type of payment term.
+     * @param paymentTermsType
+     */
     public void setPaymentTermsType(PaymentTermsType paymentTermsType) {
         this.paymentTermsType = paymentTermsType;
     }
