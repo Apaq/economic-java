@@ -32,6 +32,10 @@ public class Account extends Entity {
      //* vatAccount.vatCode	string		5		The VAT code of the VAT account for this account.
 
 
+    /**
+     * The account’s id. Same as account number.
+     * @return id
+     */
     @Override
     public String getId() {
         return accountNumber == null ? null : Integer.toString(accountNumber);
@@ -46,14 +50,26 @@ public class Account extends Entity {
         this.accountNumber = id == null ? null : Integer.parseInt(id);
     }
 
+    /**
+     * The account’s number.
+     * @return
+     */
     public Integer getAccountNumber() {
         return accountNumber;
     }
 
+    /**
+     * The account’s number.
+     * @param accountNumber
+     */
     public void setAccountNumber(Integer accountNumber) {
         this.accountNumber = accountNumber;
     }
 
+    /**
+     * The type of account in the chart of accounts. ProfitAndLoss, Status, TotalFrom, Heading, HeadingStart,
+     * @return
+     */
     public AccountType getAccountType() {
         return accountType;
     }
@@ -67,10 +83,18 @@ public class Account extends Entity {
         this.accountType = accountType;
     }
 
+    /**
+     * A link to a list of accounting years for which the account is usable.
+     * @return
+     */
     public String getAccountingYears() {
         return accountingYears;
     }
 
+    /**
+     * A link to a list of accounting years for which the account is usable.
+     * @param accountingYears
+     */
     public void setAccountingYears(String accountingYears) {
         this.accountingYears = accountingYears;
     }
