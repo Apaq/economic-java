@@ -7,9 +7,9 @@
     <packaging>jar</packaging>
     
     <scm>
-        <connection>scm:git:https://github.com/Previsto/economic-java.git</connection>
-        <developerConnection>scm:git:git@github.com:Previsto/economic-java.git</developerConnection>
-        <url>https://github.com/Previsto/economic-java</url>
+        <connection>scm:git:https://github.com/Apaq/economic-java.git</connection>
+        <developerConnection>scm:git:git@github.com:Apaq/economic-java.git</developerConnection>
+        <url>https://github.com/Apaq/economic-java</url>
       <tag>HEAD</tag>
   </scm>
 
@@ -143,7 +143,7 @@
                 <version>0.7.5.201505241946</version>
                 <configuration>
                     <excludes>
-                        <exclude>com/previsto/economic/model/**</exclude>
+                        <exclude>dk/apaq/economic/model/**</exclude>
                     </excludes>
                 </configuration>
                 <executions>
