@@ -1,7 +1,75 @@
 {
-  "message": "HttpMethod 'PATCH' is not allowed on /products",
-  "developerHint": "The method is either just not implemented yet or we don't have any plans to allow it. If you need it, send us a feature request and explain to us what you need it for.",
-  "logId": "557081a95e9eefd4-EWR",
-  "httpStatusCode": 405,
-  "logTime": "2020-01-18T13:17:33"
+  "message": "Validation error.",
+  "developerHint": "Inspect validation errors and correct your request.",
+  "logId": "c7ca5bc2-ad2d-4639-93f9-b22ba88c97d7",
+  "httpStatusCode": 400,
+  "errors": {
+    "currency": {
+      "errors": [
+        {
+          "errorCode": "E06000",
+          "message": "currency does not exist.",
+          "value": "ZUL",
+          "developerHint": "Find a list of currencies at https://restapi.e-conomic.com/currencies."
+        }
+      ]
+    },
+    "customer": {
+      "errors": [
+        {
+          "errorCode": "E06000",
+          "message": "customer does not exist.",
+          "value": "987987987",
+          "developerHint": "Find a list of resources at https://restapi.e-conomic.com/customers."
+        }
+      ]
+    },
+    "lines": [
+      {
+        "arrayIndex": 0,
+        "unit": {
+          "errors": [
+            {
+              "errorCode": "E06000",
+              "message": "unit does not exist.",
+              "value": 10,
+              "developerHint": "Find a list of units at https://restapi.e-conomic.com/units."
+            }
+          ]
+        },
+        "unitNetPrice": {
+          "errors": [
+            {
+              "errorCode": "E04740",
+              "message": "unitNetPrice scale cannot be greater then two decimal places.",
+              "value": 10.12345,
+              "developerHint": "Please check the format of your data."
+            }
+          ]
+        }
+      },
+      {
+        "arrayIndex": 1,
+        "product": {
+          "errors": [
+            {
+              "errorCode": "E04500",
+              "message": "No identifiers present on product. Please include either a self link or a productNumber.",
+              "developerHint": "Find a list of resources at https://restapi.e-conomic.com/products."
+            }
+          ]
+        }
+      }
+    ],
+    "quantity": {
+      "errors": [
+        {
+          "errorCode": "E04730",
+          "message": "Property quantity must have a value when product is set.",
+          "developerHint": "Please check your request data."
+        }
+      ]
+    }
+  },
+  "logTime": "2015-03-12T16:44:56"
 }

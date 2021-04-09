@@ -3,27 +3,40 @@ package dk.apaq.economic.exception;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.HashMap;
 import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RequestException extends EconomicException {
 
-    private Map<String, Object> validationErrors = null;
+    private Map<String, Object> errors = new HashMap<>();
     
     @JsonCreator
-    public RequestException(@JsonProperty(value = "httpStatusCode") String httpStatusCode, @JsonProperty(value = "message") String message, @JsonProperty("developerHint") String developerHint) {
+    public RequestException(@JsonProperty(value = "httpStatusCode") String httpStatusCode,
+                            @JsonProperty(value = "message") String message,
+                            @JsonProperty("developerHint") String developerHint,
+                            @JsonProperty("errors") Map<String, Object> errors) {
         super(message, httpStatusCode, developerHint);
+        this.errors = errors;
     }
 
     public RequestException(String message) {
         super(message);
     }
 
-    public Map<String, Object> getValidationErrors() {
-        return validationErrors;
+    public Map<String, Object> getErrors() {
+        return errors;
+    }
+
+    @Override
+    public String getMessage() {
+        String message = super.getMessage();
+        if(errors != null && !errors.isEmpty()) {
+            message += "Errors: " + errors.toString();
+        }
+        return message;
     }
 
     private static final long serialVersionUID = 1L;
-
-    
 }

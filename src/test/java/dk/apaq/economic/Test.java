@@ -24,15 +24,16 @@ public class Test {
 
         DraftInvoice invoice = null;
         Customer customer = customers.getContent().get(0);
+        Product product = products.getContent().get(0);
 
         int paymentTermsNumber = customer.getPaymentTerms().getPaymentTermsNumber();
 
         invoice = new DraftInvoice();
         invoice.setCurrency("DKK");
         invoice.getReferences().setOther("prv-123123123321");
-        invoice.getCustomer().setCustomerNumber(Integer.parseInt(contact.getRemoteId()));
+        invoice.getCustomer().setCustomerNumber(customer.getCustomerNumber());
         invoice.getPaymentTerms().setPaymentTermsNumber(paymentTermsNumber);
-        invoice.getNotes().setTextLine1(assignment.getMessage());
+        invoice.getNotes().setTextLine1("This is an invoice");
 
         Recipient r = new Recipient();
         r.setName(customer.getName());
@@ -65,7 +66,7 @@ public class Test {
         line.setDescription(description.toString());
         line.setUnitNetPrice(200.12);
         line.setQuantity(1.0);
-
+/*
         ProductReference pr = new ProductReference();
         pr.setProductNumber(articleIdMap.get(task.getWorkType()));
         line.setProduct(pr);
@@ -74,6 +75,6 @@ public class Test {
 
         LOG.debug("Persisting invoice");
         invoice = client.getDraftInvoiceResource().save(invoice);
-        System.out.println(draftInvoice.getId());
+        System.out.println(invoice.getId());*/
     }
 }

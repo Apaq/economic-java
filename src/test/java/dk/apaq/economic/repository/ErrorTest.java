@@ -63,6 +63,7 @@ public class ErrorTest {
             mockServer.verify();
             Assert.fail("Should have thrown exception");
         } catch(RequestException ex) {
+            System.out.print(ex.getErrors().toString());
             Assert.assertTrue(ex.getMessage().contains("HttpMethod 'PATCH' is not allowed on /products"));
         }   
 
